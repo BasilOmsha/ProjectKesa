@@ -111,7 +111,7 @@
 			<version>3.3.0</version>
 		</dependency>
 
-		<!-- BEGIN: Added by Pena -->
+		<!-- BEGIN: Added by Basil -->
 		<!-- This dependency is needed for annotations (e.g. @Path, @Consumes, @Produces etc.) in the REST-class-->
 		<dependency>
 			<groupId>org.glassfish.jersey.media</groupId>
@@ -161,7 +161,7 @@
 			<version>1.1.1</version>
 		</dependency>
 
-		<!-- END: Added by Pena -->
+		<!-- END: Added by Basil -->
 
 		<!-- Test Dependencies -->
 
