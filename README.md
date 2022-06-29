@@ -8,4 +8,4 @@ Logged in users also can access a "feed page" where they can write postes and se
 
 Also the platform will have a fucntion for administrators ot login and administrate profiles and posts, meaning that they can edit, add, and delete profiles, but only able to delete posts when necessary. 
 
-This project is being built using JAVA RESTful Web Services. The HTML forms will send data in JSON format by AJAX to a RESTful web service. To receive data I will also use AJAX insted of GET type request. 
+This project is being built using JAVA RESTful Web Services. some of the HTML forms will send data in JSON format by AJAX to a RESTful web service, in addtion, I will use post type request to send data in other forms. To receive data I will also use AJAX and GET type request. 
