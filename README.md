@@ -2,7 +2,7 @@
 
 About this Project 
 
-In this project, I am trying to create a Facebook clone and get some of its functions to work. As a starter, I plan to have login and signup forms that connect to the database to add and retrieve data from it. In addition, when the user logs in, they can see, edit, and delete information, also with the ability to delete the whole profile.
+In this project, I am trying to create a Facebook clone named "ChatNook" and get some of its functions to work. As a starter, I plan to have login and signup forms that connect to the database to add and retrieve data from it. In addition, when the user logs in, they can see, edit, and delete information, also with the ability to delete the whole profile.
 
 Logged-in users also can access a "feed page" where they can write posts and see other users' posts.
 
