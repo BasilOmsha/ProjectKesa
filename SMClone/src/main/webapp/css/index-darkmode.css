@@ -122,13 +122,14 @@ img {
 }
 
 .input-container {
-	border: 1px solid #dddfe2;
-	color: #1d2129;
+	border: 1px solid #1e1e1e;
+	color: #ffffff;
 	height: 48px;
 	border-radius: 6px;
 	padding: 14px 16px;
 	width: 365px;
 	margin-bottom: 15px;
+	background: #1e1e1e;
 }
 
 .input-container:focus-within {
@@ -145,12 +146,12 @@ img {
 }
 
 .input-container::placeholder {
-	opacity: 0.9;
+	opacity:1.99;
 }
 
 .login-button {
 	border: 1px solid #dddfe2;
-	background-color: #1877F2;
+	background-color: #00875a;
 	font: 20px Helvetica, Arial, sans-serif;
 	color: #ffffff;
 	text-align: center;
@@ -165,20 +166,21 @@ img {
 }
 
 .login-button:hover {
-	background: #166fe5;
+	background: #006644;
 }
 
 .form-forgot-password {
 	font-size: 15px;
-	color: #1877f2;
+	color: #00875a;
 }
 
 .form-forgot-password:hover {
 	text-decoration: underline;
+	color: #00875a;
 }
 
 .divider {
-	border-bottom: 1px soild #dddfe2;
+	border-bottom: 1px soild #1e1e1e;
 	margin: 20px 16px;
 }
 
@@ -188,7 +190,7 @@ img {
 	line-height: 48px;
 	padding: 0 16px;
 	cursor: pointer;
-	background-color: #42b72a;
+	background-color: #ffb300;
 	color: #fff;
 	transition: 200ms cubic-bezier(.08, .52, .52, 1) background-color, 200ms
 		cubic-bezier(.08, .52, .52, 1) box-shadow, 200ms
@@ -199,7 +201,7 @@ img {
 }
 
 .signup-button:hover {
-	background: #36a420;
+	background: #ffa000;
 	color: white;
 }
 
@@ -207,6 +209,7 @@ img {
 	font-size: 15px;
 	margin-top: 20px;
 	text-align: center;
+	color: #8f13fe;
 }
 
 .create-a-page:hover {
