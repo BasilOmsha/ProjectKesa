@@ -56,6 +56,10 @@ a {
     border-color: #8f13fe;
 }
 
+.form-check-input:hover {
+	cursor: pointer;
+}
+
 /* .form-check-input:hover + .hidden-message {
     display: block;
   	color: red;
