@@ -34,7 +34,7 @@ body::before {
 .sign-up-form {
 	width: 425px;
 	height: 550px;
-	box-shadow: 0px 5px 8px 3px #aaaa;
+	box-shadow: 0px 5px 8px 3px #6666;
 	border-radius: 5px;
 	background: #000000;
 	color: #ffffff;
@@ -55,6 +55,7 @@ body::before {
 	right: 10px;
 	top: 12px;
 	z-index: 2;
+	cursor: pointer;
 }
 
 .first_sub_title {
