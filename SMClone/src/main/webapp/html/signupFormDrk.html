@@ -15,25 +15,35 @@
 	<div class="main">
 		<form class="sign-up-form">
 			<h2 class="first_title">Sign Up</h2>
-			<img class="cancel-img" alt="Light Mode" src="../images/X.png" onclick="location.href='./indexDarkMode.html';">
+			<img class="cancel-img" alt="Light Mode" src="../images/X.png"
+				onclick="location.href='./indexDarkMode.html';">
 			<p class="first_sub_title">It's quick and easy.</p>
 			<hr />
 			<!--Input section start-->
 			<div class="signup-input-container">
-				<input type="text" placeholder="First name" 
-					id="all" required /> <input type="text" placeholder="Last name"
-					 id="all" required /> <br /> <input type="email"
-					placeholder="Mobile number or email address" id="all1" required />
-				<br /> <input type="password" placeholder="New password" id="all1"
-					required /> <br />
+				<input type="text" placeholder="First name" id="all" required /> <input
+					type="text" placeholder="Last name" id="all" required /> <br /> <input
+					type="email" placeholder="Mobile number or email address" id="all1"
+					required /> <br /> <input type="password"
+					placeholder="New password" id="all1" required /> <br />
 			</div>
 			<!--Input section end-->
 			<!--Date of Birth section start-->
 			<p class="sub_title_2">
 				Birthday<a class="question-mark" href="#"
 					title="Click for more information" role="button"
-					aria-decriobedby=""><i class="question-mark-imag"></i></a>
+					aria-decriobedby="" onclick="myFunction()"><i
+					class="question-mark-imag"></i></a>
 			</p>
+			<div id="birthday-info-text-positioning">
+				<div id="birthday-info-container">
+					<b>Providing your birthday</b> helps make sure you get the right
+					ChatNook experience for your age. If you want to change who sees
+					this, go to the About section of your profile. For more details,
+					please visit our <a class="fine-prin-hover" href="#"
+						style="color: #00875a">Data Policy.</a>
+				</div>
+			</div>
 			<select>
 				<option value="">Month</option>
 				<option value="01">Jan</option>
@@ -213,8 +223,14 @@
 			<p class="sub_title_3">
 				Gender<a class="question-mark" href="#"
 					title="Click for more information" role="button"
-					aria-decriobedby=""><i class="question-mark-imag"></i></a>
+					aria-decriobedby="" onclick="genderFunction()"><i
+					class="question-mark-imag"></i></a>
 			</p>
+			<div id="gender-info-text-positioning">
+				<div id="gender-info-container">You can change who sees your
+					gender on your profile later. Select Custom to choose another
+					gender, or if you'd rather not say.</div>
+			</div>
 			<div class="gender-container">
 				<div class="all_gender">
 					<label class="gender-lable" for="female">Female</label> <input
@@ -239,18 +255,50 @@
 			</p>
 			<br>
 			<p class="fine-print">
-				By clicking Sign Up, you agree to our <a
-					class="fine-prin-hover" href="#" style="color: #00875a">Terms</a>. Learn
-				how we collect, use and share your data in our <a
-					class="fine-prin-hover" href="#" style="color: #00875a">Data
-					Policy</a> and how we use cookies and similar technology in our <a
-					class="fine-prin-hover" href="#" style="color: #00875a">Cookies
-					Policy</a>. You may receive SMS Notifications from us and can opt out
-				any time.
+				By clicking Sign Up, you agree to our <a class="fine-prin-hover"
+					href="#" style="color: #00875a">Terms</a>. Learn how we collect,
+				use and share your data in our <a class="fine-prin-hover" href="#"
+					style="color: #00875a">Data Policy</a> and how we use cookies and
+				similar technology in our <a class="fine-prin-hover" href="#"
+					style="color: #00875a">Cookies Policy</a>. You may receive SMS
+				Notifications from us and can opt out any time.
 			</p>
 			<input type="submit" value="Sign Up" class="submit" />
 		</form>
 	</div>
 	<!--Facebook Signup from end-->
+	<script>
+		function myFunction() {
+			var x = document.getElementById("birthday-info-container");
+			if (x.style.display === "none") {
+				x.style.display = "block";
+			} else {
+				x.style.display = "none";
+			}
+		}
+
+		document.addEventListener('mouseup', function(e) {
+			var container = document.getElementById('birthday-info-container');
+			if (!container.contains(e.target)) {
+				container.style.display = 'none';
+			}
+		});
+
+		function genderFunction() {
+			var x = document.getElementById("gender-info-container");
+			if (x.style.display === "none") {
+				x.style.display = "block";
+			} else {
+				x.style.display = "none";
+			}
+		}
+
+		document.addEventListener('mouseup', function(e) {
+			var container = document.getElementById('gender-info-container');
+			if (!container.contains(e.target)) {
+				container.style.display = 'none';
+			}
+		});
+	</script>
 </body>
 </html>

@@ -232,3 +232,61 @@ a {
 	cursor: pointer;
 }
 /*last section end*/
+
+/*Onclick info text*/
+#birthday-info-text-positioning {
+	height: 0;
+	position: absolute;
+	z-index: 302;
+	width: 410px;
+    right: 275px;
+    top: 225px;
+    opacity: 1;
+    
+}
+
+#birthday-info-container {
+	border: 0;
+	border-radius: 2px;
+	box-shadow: 0 0 0 1px rgb(0 0 0/ 10%), 0 1px 10px rgb(0 0 0/ 35%);
+	background: #FFFFFF;
+	position: relative;
+	box-sizing: border-box;
+	font-size: 13px;
+	line-height: 16px;
+	right: 60px;
+	top: 10px !important;
+	width: 356px;
+	padding: 12px;
+	color: #65676b;
+	display: none;
+}
+
+#gender-info-text-positioning {
+	height: 0;
+	position: absolute;
+	z-index: 302;
+	width: 410px;
+    right: 289px;
+    top: 284px;
+    opacity: 1;
+    
+}
+
+#gender-info-container {
+	border: 0;
+	border-radius: 2px;
+	box-shadow: 0 0 0 1px rgb(0 0 0/ 10%), 0 1px 10px rgb(0 0 0/ 35%);
+	background: #FFFFFF;
+	position: relative;
+	box-sizing: border-box;
+	font-size: 13px;
+	line-height: 16px;
+	right: 60px;
+	top: 10px !important;
+	width: 356px;
+	padding: 12px;
+	color: #65676b;
+	display: none;
+}
+
