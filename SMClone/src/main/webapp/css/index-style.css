@@ -36,6 +36,7 @@
 	--signup-button-fontColor: #fff;
 	--signup-button-hover: #36a420;
 	--create-a-page-paragraph: #1c1e21;
+	--create-a-page: #000000;
 }
 
 body {
@@ -126,6 +127,7 @@ img {
 	--signup-button-fontColor: #fff;
 	--signup-button-hover: #ffa000;
 	--create-a-page-paragraph: #8f13fe;
+	--create-a-page: #8f13fe;
 }
 
 /*********
@@ -274,6 +276,10 @@ img {
 
 .create-a-page:hover {
 	text-decoration: underline
+}
+
+.black {
+	color: var(--create-a-page);
 }
 
 .footer {

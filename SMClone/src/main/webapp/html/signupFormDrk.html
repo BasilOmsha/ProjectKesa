@@ -13,7 +13,7 @@
 <body>
 	<!--Facebook Signup from start-->
 	<div class="main">
-		<form class="sign-up-form">
+		<form class="sign-up-form"  id="myForm">
 			<h2 class="first_title">Sign Up</h2>
 			<img class="cancel-img" alt="Light Mode" src="../images/X.png"
 				onclick="location.href='./indexDarkMode.html';">
@@ -44,8 +44,8 @@
 						style="color: #00875a">Data Policy.</a>
 				</div>
 			</div>
-			<select>
-				<option value="">Month</option>
+			<select required>
+				<option value="" style="display: none">Month</option>
 				<option value="01">Jan</option>
 				<option value="02">Feb</option>
 				<option value="03">Mar</option>
@@ -58,8 +58,8 @@
 				<option value="10">Oct</option>
 				<option value="11">Nov</option>
 				<option value="12">Dec</option>
-			</select> <select>
-				<option value="">Day</option>
+			</select> <select required>
+				<option value="" style="display: none">Day</option>
 				<option value="1">1</option>
 				<option value="2">2</option>
 				<option value="3">3</option>
@@ -91,8 +91,8 @@
 				<option value="29">29</option>
 				<option value="30">30</option>
 				<option value="31">31</option>
-			</select> <select>
-				<option value="">Year</option>
+			</select> <select required>
+				<option value="" style="display: none">Year</option>
 				<option value="2022">2022</option>
 				<option value="2021">2021</option>
 				<option value="2020">2020</option>
@@ -234,17 +234,29 @@
 			<div class="gender-container">
 				<div class="all_gender">
 					<label class="gender-lable" for="female">Female</label> <input
-						class="gender-radio" type="radio" name="gender" value="female" />
+						class="gender-radio" type="radio" name="gender" id ="female1" value="female" required onclick="expandDrk()" />
 				</div>
 				<div class="all_gender">
 					<label class="gender-lable" for="male">Male<b
 						style="color: #1e1e1e;"> ...</b></label> <input class="gender-radio"
-						type="radio" name="gender" value="male" />
+						type="radio" name="gender" id ="male1" value="male" required onclick="expandDrk()" />
 				</div>
 				<div class="all_gender">
 					<label class="gender-lable" for="other">Custom</label> <input
-						class="gender-radio" type="radio" name="gender" value="other" />
+						class="gender-radio" type="radio" name="gender" id ="other1" value="other" required onclick="expandDrk()" />
 				</div>
+			</div>
+			<div id="toExpandDark" style="visibility:hidden; display: none">
+			<select class="pronoun">
+				<option style="display: none">Select your pronoun</option>
+				<option disabled>Select your pronoun</option>
+				<option value="she">She: "Wish her a happy birthday!"</option>
+				<option value="he">He: "Wish him a happy birthday!"</option>
+				<option value="they">They: "Wish them a happy birthday!"</option>
+			</select>
+			<p class="sub_title_3">Your pronoun is visible to everyone.</p>
+			<input type="text" placeholder="Gender (optional)" class="gender"
+					id="all1" />
 			</div>
 			<!--Gender section end-->
 			<br />
@@ -267,38 +279,6 @@
 		</form>
 	</div>
 	<!--Facebook Signup from end-->
-	<script>
-		function myFunction() {
-			var x = document.getElementById("birthday-info-container");
-			if (x.style.display === "none") {
-				x.style.display = "block";
-			} else {
-				x.style.display = "none";
-			}
-		}
-
-		document.addEventListener('mouseup', function(e) {
-			var container = document.getElementById('birthday-info-container');
-			if (!container.contains(e.target)) {
-				container.style.display = 'none';
-			}
-		});
-
-		function genderFunction() {
-			var x = document.getElementById("gender-info-container");
-			if (x.style.display === "none") {
-				x.style.display = "block";
-			} else {
-				x.style.display = "none";
-			}
-		}
-
-		document.addEventListener('mouseup', function(e) {
-			var container = document.getElementById('gender-info-container');
-			if (!container.contains(e.target)) {
-				container.style.display = 'none';
-			}
-		});
-	</script>
+	<script src="../js/scripts.js"></script>
 </body>
 </html>

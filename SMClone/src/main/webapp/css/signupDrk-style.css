@@ -32,6 +32,7 @@ body::before {
 /*Background Section end*/
 /*From Section Start*/
 .sign-up-form {
+	flex-wrap: wrap;
 	width: 425px;
 	height: 550px;
 	box-shadow: 0px 5px 8px 3px #6666;
@@ -40,6 +41,19 @@ body::before {
 	color: #ffffff;
 	z-index: 10;
 	position: relative;
+}
+
+.sign-up-form-expanded {
+	flex-wrap: wrap;
+	width: 425px;
+	height: 650px;
+	box-shadow: 0px 5px 8px 3px #6666;
+	border-radius: 5px;
+	background: #000000;
+	color: #ffffff;
+	z-index: 10;
+	position: relative;
+	padding-bottom: 20px;
 }
 /*1st title and sub-title start*/
 .first_title {
@@ -166,6 +180,7 @@ select {
 	border: 1px solid #aaaa;
 	padding: 10px 0px 0px 10px;
 	background-color: #1e1e1e;
+	margin-right: 10px;
 	border-radius: 5px;
 }
 
@@ -214,6 +229,18 @@ a {
 	text-decoration: none;
 }
 
+.pronoun {
+	width: 400px;
+	height: 35px;
+	border: 1px solid #aaaa;
+	border-radius: 5px;
+	font-size: 15px;
+	margin-left: 12px;
+	margin-top: 10px;
+	padding-left: 10px;
+	
+}
+
 .fine-prin-hover:hover {
 	cursor: pointer;
 	text-decoration: underline;
@@ -238,8 +265,6 @@ a {
 	cursor: pointer;
 }
 /*last section end*/
-
-/*Onclick info text*/
 
 /*Onclick info text*/
 #birthday-info-text-positioning {
