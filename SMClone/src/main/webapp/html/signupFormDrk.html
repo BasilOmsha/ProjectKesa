@@ -13,7 +13,7 @@
 <body>
 	<!--Facebook Signup from start-->
 	<div class="main">
-		<form class="sign-up-form"  id="myForm">
+		<form class="sign-up-form"  id="myForm" action='./client/create' method='post'>
 			<h2 class="first_title">Sign Up</h2>
 			<img class="cancel-img" alt="Light Mode" src="../images/X.png"
 				onclick="location.href='./indexDarkMode.html';">
@@ -21,11 +21,11 @@
 			<hr />
 			<!--Input section start-->
 			<div class="signup-input-container">
-				<input type="text" placeholder="First name" id="all" required /> <input
-					type="text" placeholder="Last name" id="all" required /> <br /> <input
+				<input type="text" placeholder="First name" name="fname" id="all" required /> <input
+					type="text" placeholder="Last name" name="lname" id="all" required /> <br /> <input
 					type="email" placeholder="Mobile number or email address" id="all1"
 					required /> <br /> <input type="password"
-					placeholder="New password" id="all1" required /> <br />
+					placeholder="New password" name="paswd" id="all1" required /> <br />
 			</div>
 			<!--Input section end-->
 			<!--Date of Birth section start-->
@@ -44,7 +44,7 @@
 						style="color: #00875a">Data Policy.</a>
 				</div>
 			</div>
-			<select required>
+			<select required name="dob">
 				<option value="" style="display: none">Month</option>
 				<option value="01">Jan</option>
 				<option value="02">Feb</option>
@@ -58,7 +58,7 @@
 				<option value="10">Oct</option>
 				<option value="11">Nov</option>
 				<option value="12">Dec</option>
-			</select> <select required>
+			</select> <select required name="dob">
 				<option value="" style="display: none">Day</option>
 				<option value="1">1</option>
 				<option value="2">2</option>
@@ -91,7 +91,7 @@
 				<option value="29">29</option>
 				<option value="30">30</option>
 				<option value="31">31</option>
-			</select> <select required>
+			</select> <select required name="dob">
 				<option value="" style="display: none">Year</option>
 				<option value="2022">2022</option>
 				<option value="2021">2021</option>
@@ -247,7 +247,7 @@
 				</div>
 			</div>
 			<div id="toExpandDark" style="visibility:hidden; display: none">
-			<select class="pronoun">
+			<select class="pronoun" name="pronoun">
 				<option style="display: none">Select your pronoun</option>
 				<option disabled>Select your pronoun</option>
 				<option value="she">She: "Wish her a happy birthday!"</option>
@@ -255,7 +255,7 @@
 				<option value="they">They: "Wish them a happy birthday!"</option>
 			</select>
 			<p class="sub_title_3">Your pronoun is visible to everyone.</p>
-			<input type="text" placeholder="Gender (optional)" class="gender"
+			<input type="text" placeholder="Gender (optional)" name="genOpt" class="gender"
 					id="all1" />
 			</div>
 			<!--Gender section end-->
