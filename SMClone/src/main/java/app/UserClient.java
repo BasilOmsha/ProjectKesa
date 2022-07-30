@@ -4,24 +4,21 @@ import java.io.IOException;
 import java.util.Date;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.Invocation.Builder;
 import javax.ws.rs.client.WebTarget;
-import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 
 import model.User;
 import security.SecurityUtils;
 
-@Path("/client")
+@WebServlet("/client")
 public class UserClient extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -30,10 +27,10 @@ public class UserClient extends HttpServlet {
 		// TODO Auto-generated constructor stub
 	}
 
-	@POST
-	@Path("/create")
-	public void addAnswer(@Context HttpServletRequest request, @Context HttpServletResponse response)
-			throws IOException, ServletException {
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// TODO Auto-generated method stub
 
 		String uri = "http://localhost:8080/rest/services/createUser";
 
