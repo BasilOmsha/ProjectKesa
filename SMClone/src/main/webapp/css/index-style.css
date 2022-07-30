@@ -275,7 +275,8 @@ img {
 }
 
 .create-a-page:hover {
-	text-decoration: underline
+	text-decoration: underline;
+	color: #000000;
 }
 
 .black {

@@ -24,7 +24,7 @@ a {
 }
 
 .container {
-	background-color: #222632;
+	background-color: #171e24;
 	max-width: none;
 	display: flex;
 	flex-wrap: wrap;
@@ -43,7 +43,7 @@ a {
 
 .bg-light {
     --bs-bg-opacity: 1;
-    background-color: #222632 !important;
+    background-color: #171e24 !important;
 }
 
 /* .hidden-message {
