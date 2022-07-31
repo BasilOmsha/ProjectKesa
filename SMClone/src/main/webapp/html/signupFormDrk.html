@@ -11,9 +11,9 @@
 	rel="stylesheet" />
 </head>
 <body>
-	<!--Facebook Signup from start-->
+	<!--ChatNook Signup from start-->
 	<div class="main">
-		<form class="sign-up-form"  id="myForm" action='./client' method='post'>
+		<form class="sign-up-form"  id="myForm" action='../client' method='post'>
 			<h2 class="first_title">Sign Up</h2>
 			<img class="cancel-img" alt="Light Mode" src="../images/X.png"
 				onclick="location.href='./indexDarkMode.html';">
@@ -21,11 +21,14 @@
 			<hr />
 			<!--Input section start-->
 			<div class="signup-input-container">
-				<input type="text" placeholder="First name" name="fname" id="all" required /> <input
-					type="text" placeholder="Last name" name="lname" id="all" required /> <br /> <input
-					type="email" placeholder="Mobile number or email address" id="all1"
-					required /> <br /> <input type="password"
-					placeholder="New password" name="paswd" id="all1" required /> <br />
+				<input type="text" name="fname" placeholder="First name" class="first_name"
+					id="all" required /> 
+				<input type="text" name="lname" placeholder="Last name"
+					class="sure_name" id="all" required /> <br />
+				<input type="email" name="email" placeholder="Email address" id="all1" required />
+					<br /> 
+				<input type="password" name="paswd"placeholder="New password" id="all1"
+					required /> <br />
 			</div>
 			<!--Input section end-->
 			<!--Date of Birth section start-->
@@ -44,7 +47,7 @@
 						style="color: #00875a">Data Policy.</a>
 				</div>
 			</div>
-			<select required name="dob">
+			<select required name="month">
 				<option value="" style="display: none">Month</option>
 				<option value="01">Jan</option>
 				<option value="02">Feb</option>
@@ -58,7 +61,7 @@
 				<option value="10">Oct</option>
 				<option value="11">Nov</option>
 				<option value="12">Dec</option>
-			</select> <select required name="dob">
+			</select> <select required name="day">
 				<option value="" style="display: none">Day</option>
 				<option value="1">1</option>
 				<option value="2">2</option>
@@ -91,7 +94,7 @@
 				<option value="29">29</option>
 				<option value="30">30</option>
 				<option value="31">31</option>
-			</select> <select required name="dob">
+			</select> <select required name="year">
 				<option value="" style="display: none">Year</option>
 				<option value="2022">2022</option>
 				<option value="2021">2021</option>

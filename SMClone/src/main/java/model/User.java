@@ -1,9 +1,20 @@
 package model;
 
 import java.io.Serializable;
-import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQuery;
+
+@Entity
+@NamedQuery(name="User.findAll", query="SELECT u FROM User u")
 public class User implements Serializable{
+	private static final long serialVersionUID = 1L;
+	
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int user_id;
 	
 	private String fname;
@@ -16,7 +27,11 @@ public class User implements Serializable{
 
 	private String salt;
 	
-	private Date dob;
+	private String month;
+	
+	private String day;
+	
+	private String year;
 
 	private String gender;
 
@@ -28,9 +43,9 @@ public class User implements Serializable{
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	public User(int user_id, String fname, String lname, String email, String paswd, String salt, Date dob,
-			String gender, String pronoun, String genOpt) {
+
+	public User(int user_id, String fname, String lname, String email, String paswd, String salt, String month,
+			String day, String year, String gender, String pronoun, String genOpt) {
 		super();
 		this.user_id = user_id;
 		this.fname = fname;
@@ -38,15 +53,29 @@ public class User implements Serializable{
 		this.email = email;
 		this.paswd = paswd;
 		this.salt = salt;
-		this.dob = dob;
+		this.month = month;
+		this.day = day;
+		this.year = year;
 		this.gender = gender;
 		this.pronoun = pronoun;
 		this.genOpt = genOpt;
 	}
 
-	public User(String fname2, String lname2, String email2, String uname, String hashpw, long dob2, String gender2,
-			String pronoun2, String genOpt2) {
+	public User(String fname, String lname, String email, String hashpw, String salt, String month, String day,
+			String year, String gender, String pronoun, String genOpt) {
 		// TODO Auto-generated constructor stub
+		
+		this.fname = fname;
+		this.lname = lname;
+		this.email = email;
+		this.paswd = hashpw;
+		this.salt = salt;
+		this.month = month;
+		this.day = day;
+		this.year = year;
+		this.gender = gender;
+		this.pronoun = pronoun;
+		this.genOpt = genOpt;
 	}
 
 	public int getUser_id() {
@@ -97,12 +126,28 @@ public class User implements Serializable{
 		this.salt = salt;
 	}
 
-	public Date getDob() {
-		return dob;
+	public String getMonth() {
+		return month;
 	}
 
-	public void setDob(Date dob) {
-		this.dob = dob;
+	public void setMonth(String month) {
+		this.month = month;
+	}
+
+	public String getDay() {
+		return day;
+	}
+
+	public void setDay(String day) {
+		this.day = day;
+	}
+
+	public String getYear() {
+		return year;
+	}
+
+	public void setYear(String year) {
+		this.year = year;
 	}
 
 	public String getGender() {
@@ -128,5 +173,12 @@ public class User implements Serializable{
 	public void setGenOpt(String genOpt) {
 		this.genOpt = genOpt;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "User [user_id=" + user_id + ", fname=" + fname + ", lname=" + lname + ", email=" + email + ", paswd="
+				+ paswd + ", salt=" + salt + ", month=" + month + ", day=" + day + ", year=" + year + ", gender="
+				+ gender + ", pronoun=" + pronoun + ", genOpt=" + genOpt + "]";
+	}
+
 }
