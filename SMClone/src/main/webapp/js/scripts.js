@@ -47,22 +47,22 @@ function expand() {
 		const list = document.getElementById("myForm").classList;
 		list.add("sign-up-form-expanded");
 	}
-	else if (document.getElementById("female").checked){
+	else if (document.getElementById("female").checked) {
 		document.getElementById("toExpand").style.visibility = "hidden";
 		document.getElementById("toExpand").style.display = "none";
 		const list = document.getElementById("myForm").classList;
 		list.remove("sign-up-form-expanded");
-		
+
 	}
-	else if (document.getElementById("male").checked){
+	else if (document.getElementById("male").checked) {
 		document.getElementById("toExpand").style.visibility = "hidden";
 		document.getElementById("toExpand").style.display = "none";
 		const list = document.getElementById("myForm").classList;
 		list.remove("sign-up-form-expanded");
-		
+
 	}
-	else 
-	return;
+	else
+		return;
 }
 
 function expandDrk() {
@@ -72,23 +72,42 @@ function expandDrk() {
 		const list = document.getElementById("myForm").classList;
 		list.add("sign-up-form-expanded");
 	}
-	else if (document.getElementById("female1").checked){
+	else if (document.getElementById("female1").checked) {
 		document.getElementById("toExpandDark").style.visibility = "hidden";
 		document.getElementById("toExpandDark").style.display = "none";
 		const list = document.getElementById("myForm").classList;
 		list.remove("sign-up-form-expanded");
-		
+
 	}
-	else if (document.getElementById("male1").checked){
+	else if (document.getElementById("male1").checked) {
 		document.getElementById("toExpandDark").style.visibility = "hidden";
 		document.getElementById("toExpandDark").style.display = "none";
 		const list = document.getElementById("myForm").classList;
 		list.remove("sign-up-form-expanded");
-		
+
 	}
-	else 
-	return;
+	else
+		return;
 }
+
+/** closes the success alert after signup W3Schools */
+// Get all elements with class="closebtn"
+var close = document.getElementsByClassName("closebtn");
+var i;
+
+// Loop through all close buttons
+for (i = 0; i < close.length; i++) {
+	// When someone clicks on a close button
+	close[i].onclick = function() {
+		// Get the parent of <span class="closebtn"> (<div class="alert">)
+		var div = this.parentElement;
+		// Set the opacity of div to 0 (transparent)
+		div.style.opacity = "0";
+		// Hide the div after 600ms (the same amount of milliseconds it takes to fade out)
+		setTimeout(function() { div.style.display = "none"; }, 600);
+	}
+}
+
 
 /** function expand() {
 	if (document.getElementById("other").checked){

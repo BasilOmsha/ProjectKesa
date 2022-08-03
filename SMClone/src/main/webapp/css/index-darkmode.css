@@ -225,3 +225,33 @@ img {
 	font-family: inherit;
 	display: block;
 }
+
+/***W3Schools success alert when signup is successful***/
+.alert {
+  padding: 20px;
+  background-color: #f44336; /* Red */
+  color: var(--bodyBackground);
+  opacity: 1;
+  transition: opacity 0.6s;
+  margin-bottom: 15px;
+  width: 396px;
+}
+
+.alert.success {
+	background-color: #006644;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: #ffffff;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: var(--bodyFontColor);
+}

@@ -39,7 +39,7 @@ public class UserClientDrk extends HttpServlet {
 
 		PrintWriter out = response.getWriter();
 
-		response.sendRedirect("./html/indexDarkMode.html");
+		response.sendRedirect("./html/signupSuccessDrk.html");
 
 	}
 

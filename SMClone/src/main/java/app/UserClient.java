@@ -36,7 +36,7 @@ public class UserClient extends HttpServlet {
 
 		PrintWriter out = response.getWriter();
 
-		response.sendRedirect("./index.html");
+		response.sendRedirect("./html/signupSuccess.html");
 
 	}
 

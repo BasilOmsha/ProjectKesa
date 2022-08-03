@@ -37,6 +37,8 @@
 	--signup-button-hover: #36a420;
 	--create-a-page-paragraph: #1c1e21;
 	--create-a-page: #000000;
+	--alert: #f44336; /*red*/
+	--green: #04AA6D;
 }
 
 body {
@@ -287,4 +289,34 @@ img {
 	width: auto;
 	font-family: inherit;
 	
+}
+
+/***W3Schools success alert when signup is successful***/
+.alert {
+  padding: 20px;
+  background-color: var(--alert);
+  color: var(--bodyBackground);
+  opacity: 1;
+  transition: opacity 0.6s;
+  margin-bottom: 15px;
+  width: 396px;
+}
+
+.alert.success {
+	background-color: var(--green);
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: var(--containerBackGround);
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: var(--bodyFontColor);
 }
