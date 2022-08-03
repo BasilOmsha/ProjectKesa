@@ -78,6 +78,11 @@ public class User implements Serializable{
 		this.genOpt = genOpt;
 	}
 
+	public User(String email) {
+		// TODO Auto-generated constructor stub
+		this.email = email;
+	}
+
 	public int getUser_id() {
 		return user_id;
 	}
@@ -176,9 +181,9 @@ public class User implements Serializable{
 
 	@Override
 	public String toString() {
-		return "User [user_id=" + user_id + ", fname=" + fname + ", lname=" + lname + ", email=" + email + ", paswd="
-				+ paswd + ", salt=" + salt + ", month=" + month + ", day=" + day + ", year=" + year + ", gender="
-				+ gender + ", pronoun=" + pronoun + ", genOpt=" + genOpt + "]";
+		return "A New User Has Been Added:" + "\n" + "user_id=" + user_id + "\n" + "fname=" + fname + "\n" + "lname=" + lname + "\n" + "email=" + email + "\n" + "paswd="
+				+ paswd + "\n" + "salt=" + salt + "\n" + "month=" + month + "\n" + "day=" + day + "\n" + "year=" + year + "\n" + "gender="
+				+ gender + "\n" + "pronoun=" + pronoun + "\n" + "genOpt=" + genOpt;
 	}
 
 }

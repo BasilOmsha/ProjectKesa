@@ -2,6 +2,8 @@ package app;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
@@ -20,11 +23,11 @@ import model.User;
 import security.SecurityUtils;
 import dao.Dao;
 
-@WebServlet("/client")
-public class UserClient extends HttpServlet {
+@WebServlet("/clientDrk")
+public class UserClientDrk extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public UserClient() {
+	public UserClientDrk() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -36,7 +39,7 @@ public class UserClient extends HttpServlet {
 
 		PrintWriter out = response.getWriter();
 
-		response.sendRedirect("./index.html");
+		response.sendRedirect("./html/indexDarkMode.html");
 
 	}
 
@@ -67,14 +70,13 @@ public class UserClient extends HttpServlet {
 			String hashpw = SecurityUtils.getPasswordHashed(paswd, salt);
 
 			if (dao.checkemail(email)) { // if email is in use reload the form
-
 				try {
+
 					request.setAttribute("getEmail", email);
 
-					RequestDispatcher rd = request.getRequestDispatcher("./jsp/duplicateEmail.jsp");
-					rd.include(request, response);
+					RequestDispatcher rd = request.getRequestDispatcher("./jsp/duplicateEmaildrk.jsp");
+					rd.forward(request, response);
 				} catch (Exception e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 
@@ -90,7 +92,9 @@ public class UserClient extends HttpServlet {
 
 				doGet(request, response);
 			}
-		} catch (ServletException e) {
+		} catch (
+
+		ServletException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
