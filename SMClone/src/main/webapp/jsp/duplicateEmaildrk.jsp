@@ -1,3 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import="java.util.ArrayList"%>
+<%@ page import="model.User"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,22 +20,25 @@
 <body>
 	<!--ChatNook Signup from start-->
 	<div class="main">
-		<form class="sign-up-form"  id="myForm" action='../clientDrk' method='post'>
+		<form class="sign-up-form" id="myForm" action='../clientDrk'
+			method='post'>
 			<h2 class="first_title">Sign Up</h2>
 			<img class="cancel-img" alt="Light Mode" src="../images/X.png"
-				onclick="location.href='./indexDarkMode.html';">
+				onclick="location.href='./html/indexDarkMode.html';">
 			<p class="first_sub_title">It's quick and easy.</p>
+			<p class="sub_title_2" style="color: #e83038; margin-top: -10px">${requestScope.getEmail }
+				is already in use!</p>
 			<hr />
 			<!--Input section start-->
 			<div class="signup-input-container">
-				<input type="text" name="fname" placeholder="First name" class="first_name"
-					id="all" required /> 
-				<input type="text" name="lname" placeholder="Last name"
-					class="sure_name" id="all" required /> <br />
-				<input type="email" name="email" placeholder="Email address" id="all1" required />
-					<br /> 
-				<input type="password" name="paswd"placeholder="New password" id="all1"
-					required /> <br />
+				<input type="text" name="fname" placeholder="First name"
+					class="first_name" id="all" required /> <input type="text"
+					name="lname" placeholder="Last name" class="sure_name" id="all"
+					required /> <br /> <input type="email"
+					style="border: 1px solid #e83038;" name="email"
+					placeholder="Use a different email address" id="all1" required />
+				<br /> <input type="password" name="paswd"
+					placeholder="New password" id="all1" required /> <br />
 			</div>
 			<!--Input section end-->
 			<!--Date of Birth section start-->
@@ -237,29 +247,32 @@
 			<div class="gender-container">
 				<div class="all_gender">
 					<label class="gender-lable" for="female">Female</label> <input
-						class="gender-radio" type="radio" name="gender" id ="female1" value="female" required onclick="expandDrk()" />
+						class="gender-radio" type="radio" name="gender" id="female1"
+						value="female" required onclick="expandDrk()" />
 				</div>
 				<div class="all_gender">
 					<label class="gender-lable" for="male">Male<b
 						style="color: #1e1e1e;"> ...</b></label> <input class="gender-radio"
-						type="radio" name="gender" id ="male1" value="male" required onclick="expandDrk()" />
+						type="radio" name="gender" id="male1" value="male" required
+						onclick="expandDrk()" />
 				</div>
 				<div class="all_gender">
 					<label class="gender-lable" for="other">Custom</label> <input
-						class="gender-radio" type="radio" name="gender" id ="other1" value="other" required onclick="expandDrk()" />
+						class="gender-radio" type="radio" name="gender" id="other1"
+						value="other" required onclick="expandDrk()" />
 				</div>
 			</div>
-			<div id="toExpandDark" style="visibility:hidden; display: none">
-			<select class="pronoun" name="pronoun">
-				<option style="display: none">Select your pronoun</option>
-				<option disabled>Select your pronoun</option>
-				<option value="she">She: "Wish her a happy birthday!"</option>
-				<option value="he">He: "Wish him a happy birthday!"</option>
-				<option value="they">They: "Wish them a happy birthday!"</option>
-			</select>
-			<p class="sub_title_3">Your pronoun is visible to everyone.</p>
-			<input type="text" placeholder="Gender (optional)" name="genOpt" class="gender"
-					id="all1" />
+			<div id="toExpandDark" style="visibility: hidden; display: none">
+				<select class="pronoun" name="pronoun">
+					<option style="display: none">Select your pronoun</option>
+					<option disabled>Select your pronoun</option>
+					<option value="she">She: "Wish her a happy birthday!"</option>
+					<option value="he">He: "Wish him a happy birthday!"</option>
+					<option value="they">They: "Wish them a happy birthday!"</option>
+				</select>
+				<p class="sub_title_3">Your pronoun is visible to everyone.</p>
+				<input type="text" placeholder="Gender (optional)" name="genOpt"
+					class="gender" id="all1" />
 			</div>
 			<!--Gender section end-->
 			<br />

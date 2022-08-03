@@ -1,3 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import="java.util.ArrayList"%>
+<%@ page import="model.User"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +25,7 @@
 			<img class="cancel-img" alt="Light Mode" src="../images/X.png"
 				onclick="location.href='../index.html';">
 			<p class="first_sub_title">It's quick and easy.</p>
-			<p class="sub_title_2" style="color:#e83038; margin-top:-10px">Email is already in use!</p>
+			<p class="sub_title_2" style="color:#e83038; margin-top:-10px">${requestScope.getEmail } is already in use!</p>
 			<hr />
 			<!--Input section start-->
 			<div class="signup-input-container">
