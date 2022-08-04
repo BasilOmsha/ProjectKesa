@@ -90,7 +90,7 @@ function expandDrk() {
 		return;
 }
 
-/** closes the success alert after signup W3Schools */
+/** closes the success alert after signup. Source: W3Schools */
 // Get all elements with class="closebtn"
 var close = document.getElementsByClassName("closebtn");
 var i;
@@ -108,6 +108,20 @@ for (i = 0; i < close.length; i++) {
 	}
 }
 
+// When the user scrolls the page, execute myFunction. Source: W3Schools
+window.onscroll = function() { scrollFunction() };
+// Get the navbar
+var navbar = document.getElementById("navbar");
+// Get the offset position of the navbar
+var sticky = navbar.offsetTop;
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function scrollFunction() {
+	if (window.pageYOffset >= sticky) {
+		navbar.classList.add("sticky")
+	} else {
+		navbar.classList.remove("sticky");
+	}
+}
 
 /** function expand() {
 	if (document.getElementById("other").checked){
