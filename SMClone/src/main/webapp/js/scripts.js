@@ -123,24 +123,110 @@ function scrollFunction() {
 	}
 }
 
-/** function expand() {
-	if (document.getElementById("other").checked){
-		document.getElementById("toExpand").style.visibility = "visible";
+const element1 = document.getElementById("about").classList;
+const element2 = document.getElementById("posts").classList;
+const element3 = document.getElementById("friends").classList;
+const element4 = document.getElementById("photos").classList;
+function blueBottom() {
+	if (document.getElementById("about")) {
+		element1.add("profile-nav-buttons-blue");
+		element1.remove("profile-nav-buttons");
+		element2.remove("profile-nav-buttons-blue");
+		element3.remove("profile-nav-buttons-blue");
+		element4.remove("profile-nav-buttons-blue");
+	} else {
+		element1.remove("profile-nav-buttons-blue");
+		element1.add("profile-nav-buttons");
 	}
-	else if (document.getElementById("female").checked){
-		document.getElementById("toExpand").style.visibility = "hidden";
-	}
-	else if (document.getElementById("male").checked){
-		document.getElementById("toExpand").style.visibility = "hidden";
-	}
-	else document.getElementById("toExpand").style.display = "hidden";
-	return;
-}*/
+}
 
-/** function stretch() {
-	const list = document.getElementById("myForm").classList;
-	list.add("sign-up-form-expanded");
+function blueBottom2() {
+	if (document.getElementById("posts")) {
+		element2.add("profile-nav-buttons-blue");
+		element2.remove("profile-nav-buttons");
+		element1.remove("profile-nav-buttons-blue");
+		element3.remove("profile-nav-buttons-blue");
+		element4.remove("profile-nav-buttons-blue");
+	} else {
+		element2.remove("profile-nav-buttons-blue");
+		element2.add("profile-nav-buttons");
+	}
+}
 
-	var element = document.body;
-	element.classList.toggle("sign-up-form-expanded");
-}*/
+function blueBottom3() {
+	if (document.getElementById("friends")) {
+		element3.add("profile-nav-buttons-blue");
+		element3.remove("profile-nav-buttons");
+		element1.remove("profile-nav-buttons-blue");
+		element2.remove("profile-nav-buttons-blue");
+		element4.remove("profile-nav-buttons-blue");
+	} else {
+		element3.remove("profile-nav-buttons-blue");
+		element3.add("profile-nav-buttons");
+	}
+}
+
+function blueBottom4() {
+	if (document.getElementById("photos")) {
+		element4.add("profile-nav-buttons-blue");
+		element4.remove("profile-nav-buttons");
+		element1.remove("profile-nav-buttons-blue");
+		element2.remove("profile-nav-buttons-blue");
+		element3.remove("profile-nav-buttons-blue");
+	} else {
+		element4.remove("profile-nav-buttons-blue");
+		element4.add("profile-nav-buttons");
+	}
+}
+
+const ov = document.getElementById("overview").classList;
+const w = document.getElementById("work").classList;
+const c = document.getElementById("contact").classList;
+const d = document.getElementById("details").classList;
+function changeColors() {
+	if (document.getElementById("overview")) {
+		ov.add("left-columns-buttons-clicked");
+		w.remove("left-columns-buttons-clicked");
+		c.remove("left-columns-buttons-clicked");
+		d.remove("left-columns-buttons-clicked");
+	} else {
+		ov.remove("left-columns-buttons-clicked");
+		ov.add("left-columns-buttons");
+	}
+}
+
+function changeColors2() {
+	if (document.getElementById("work")) {
+		w.add("left-columns-buttons-clicked");
+		ov.remove("left-columns-buttons-clicked");
+		c.remove("left-columns-buttons-clicked");
+		d.remove("left-columns-buttons-clicked");
+	} else {
+		w.remove("left-columns-buttons-clicked");
+		w.add("left-columns-buttons");
+	}
+}
+
+function changeColors3() {
+	if (document.getElementById("contact")) {
+		c.add("left-columns-buttons-clicked");
+		w.remove("left-columns-buttons-clicked");
+		ov.remove("left-columns-buttons-clicked");
+		d.remove("left-columns-buttons-clicked");
+	} else {
+		c.remove("left-columns-buttons-clicked");
+		c.add("left-columns-buttons");
+	}
+}
+
+function changeColors4() {
+	if (document.getElementById("details")) {
+		d.add("left-columns-buttons-clicked");
+		w.remove("left-columns-buttons-clicked");
+		c.remove("left-columns-buttons-clicked");
+		ov.remove("left-columns-buttons-clicked");
+	} else {
+		d.remove("left-columns-buttons-clicked");
+		d.add("left-columns-buttons");
+	}
+}
