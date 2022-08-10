@@ -291,19 +291,9 @@ hr.solid {
 	text-decoration: none;
 }
 
-.profile-nav-buttons {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	color: #606266;
-	width: 60px;
-	height: 55px;
-	padding: 25px;
-	text-decoration: none;
-}
-
 a {
 	text-decoration: none;
+	color: #606266;
 }
 
 .content-container {
@@ -404,4 +394,114 @@ a {
 	background-color: #e7f3ff;
 	border-radius: 5px;
 	color: #1876f2;
+}
+
+.info {
+	display: flex;
+	justify-content: left;
+	align-items: top;
+	flex-direction: column;
+	width: 700px;
+	height: 400px;
+	background-color: #ffffff;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 10px 0 0 10px;
+}
+
+.info-header {
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	width: 280px;
+	height: 50px;
+	margin-bottom: 10px;
+	padding-left: 5px;
+	color: #000000;
+}
+
+.contact-info-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 650px;
+	height: 60px;
+	margin-bottom: 10px;
+	padding-left: 5px;
+	color: #606266;
+}
+
+.contact-info {
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	width: 280px;
+	height: 50px;
+	margin-bottom: 10px;
+	padding-left: 5px;
+	color: #606266;
+}
+
+.info-tag {
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	width: 200px;
+	height: 20px;
+	margin-top: -30px;
+	margin-left: 49px;
+	margin-bottom: 20px;
+	color: #606266;
+	font-size: 12px;
+}
+
+.circleDiv-base2 {
+	border-radius: 50%;
+    behavior: url(PIE.htc);
+    display: flex;
+	justify-content: right;
+	align-items: center;
+	margin-bottom:4px;
+}
+
+.circletype2 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 35px;
+    height: 35px;
+    background: #E0E0E0;
+}
+
+.circletype2:hover {
+	cursor: pointer;
+	background: #D3D3D3;	
+}
+
+.info2 {
+	display: flex;
+	justify-content: left;
+	align-items: top;
+	flex-direction: column;
+	width: 700px;
+	height: 400px;
+	background-color: #ffffff;
+	margin-left: -697px;
+	margin-top: 38px;
+	margin-bottom: 20px;
+	padding: 10px 0 0 10px;
+}
+
+.info3 {
+	display: flex;
+	justify-content: left;
+	align-items: top;
+	flex-direction: column;
+	width: 700px;
+	height: 400px;
+	background-color: #ffffff;
+	margin-left: -697px;
+	margin-top: 38px;
+	margin-bottom: 20px;
+	padding: 10px 0 0 10px;
 }

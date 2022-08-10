@@ -123,12 +123,14 @@ function scrollFunction() {
 	}
 }
 
+/*profile top tabs*/
 const element1 = document.getElementById("about").classList;
 const element2 = document.getElementById("posts").classList;
 const element3 = document.getElementById("friends").classList;
 const element4 = document.getElementById("photos").classList;
 function blueBottom() {
 	if (document.getElementById("about")) {
+		document.getElementById("about-left-column").style.visibility = "visible";
 		element1.add("profile-nav-buttons-blue");
 		element1.remove("profile-nav-buttons");
 		element2.remove("profile-nav-buttons-blue");
@@ -142,6 +144,10 @@ function blueBottom() {
 
 function blueBottom2() {
 	if (document.getElementById("posts")) {
+		document.getElementById("about-left-column").style.visibility = "hidden";
+		document.getElementById("contact-and-basic-info").style.visibility = "hidden";
+		document.getElementById("overview1").style.visibility = "hidden";
+		document.getElementById("security1").style.visibility = "hidden";
 		element2.add("profile-nav-buttons-blue");
 		element2.remove("profile-nav-buttons");
 		element1.remove("profile-nav-buttons-blue");
@@ -155,6 +161,10 @@ function blueBottom2() {
 
 function blueBottom3() {
 	if (document.getElementById("friends")) {
+		document.getElementById("about-left-column").style.visibility = "hidden";
+		document.getElementById("contact-and-basic-info").style.visibility = "hidden";
+		document.getElementById("overview1").style.visibility = "hidden";
+		document.getElementById("security1").style.visibility = "hidden";
 		element3.add("profile-nav-buttons-blue");
 		element3.remove("profile-nav-buttons");
 		element1.remove("profile-nav-buttons-blue");
@@ -168,6 +178,10 @@ function blueBottom3() {
 
 function blueBottom4() {
 	if (document.getElementById("photos")) {
+		document.getElementById("about-left-column").style.visibility = "hidden";
+		document.getElementById("contact-and-basic-info").style.visibility = "hidden";
+		document.getElementById("overview1").style.visibility = "hidden";
+		document.getElementById("security1").style.visibility = "hidden";
 		element4.add("profile-nav-buttons-blue");
 		element4.remove("profile-nav-buttons");
 		element1.remove("profile-nav-buttons-blue");
@@ -179,16 +193,20 @@ function blueBottom4() {
 	}
 }
 
+/*changes colors on selected "about buttons" and shows related info*/
+const about = document.getElementById("about-left-column").classList;
 const ov = document.getElementById("overview").classList;
-const w = document.getElementById("work").classList;
 const c = document.getElementById("contact").classList;
-const d = document.getElementById("details").classList;
+const s = document.getElementById("security").classList;
 function changeColors() {
 	if (document.getElementById("overview")) {
+		document.getElementById("about-left-column").style.visibility = "visible";
+		document.getElementById("contact-and-basic-info").style.visibility = "hidden";
+		document.getElementById("overview1").style.visibility = "visible";
+		document.getElementById("security1").style.visibility = "hidden";
 		ov.add("left-columns-buttons-clicked");
-		w.remove("left-columns-buttons-clicked");
 		c.remove("left-columns-buttons-clicked");
-		d.remove("left-columns-buttons-clicked");
+		s.remove("left-columns-buttons-clicked");
 	} else {
 		ov.remove("left-columns-buttons-clicked");
 		ov.add("left-columns-buttons");
@@ -196,37 +214,31 @@ function changeColors() {
 }
 
 function changeColors2() {
-	if (document.getElementById("work")) {
-		w.add("left-columns-buttons-clicked");
-		ov.remove("left-columns-buttons-clicked");
-		c.remove("left-columns-buttons-clicked");
-		d.remove("left-columns-buttons-clicked");
-	} else {
-		w.remove("left-columns-buttons-clicked");
-		w.add("left-columns-buttons");
-	}
-}
-
-function changeColors3() {
 	if (document.getElementById("contact")) {
+		document.getElementById("about-left-column").style.visibility = "visible";
+		document.getElementById("contact-and-basic-info").style.visibility = "visible";
+		document.getElementById("overview1").style.visibility = "hidden";
+		document.getElementById("security1").style.visibility = "hidden";
 		c.add("left-columns-buttons-clicked");
-		w.remove("left-columns-buttons-clicked");
 		ov.remove("left-columns-buttons-clicked");
-		d.remove("left-columns-buttons-clicked");
+		s.remove("left-columns-buttons-clicked");
 	} else {
 		c.remove("left-columns-buttons-clicked");
 		c.add("left-columns-buttons");
 	}
 }
 
-function changeColors4() {
-	if (document.getElementById("details")) {
-		d.add("left-columns-buttons-clicked");
-		w.remove("left-columns-buttons-clicked");
-		c.remove("left-columns-buttons-clicked");
+function changeColors3() {
+	if (document.getElementById("security")) {
+		document.getElementById("about-left-column").style.visibility = "visible";
+		document.getElementById("security1").style.visibility = "visible";
+		document.getElementById("contact-and-basic-info").style.visibility = "hidden";
+		document.getElementById("overview1").style.visibility = "hidden";
+		s.add("left-columns-buttons-clicked");
 		ov.remove("left-columns-buttons-clicked");
+		c.remove("left-columns-buttons-clicked");
 	} else {
-		d.remove("left-columns-buttons-clicked");
-		d.add("left-columns-buttons");
+		s.remove("left-columns-buttons-clicked");
+		s.add("left-columns-buttons");
 	}
 }

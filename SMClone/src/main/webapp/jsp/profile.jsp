@@ -18,7 +18,7 @@
 	href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
 	rel="stylesheet" />
 </head>
-<body>
+<body onload="blueBottom(); changeColors()">
 	<header>
 		<div id="navbar">
 			<div class="logo-left-wrapper">
@@ -79,52 +79,167 @@
 			<hr class="solid">
 			<div class="profile-nav">
 				<div class="profile-nav-container">
-					<a href="#" id="about" class="profile-nav-buttons"
-						onclick="blueBottom()"> About </a>
+					<a href="#about-left-column" id="about" class="profile-nav-buttons"
+						onclick="blueBottom(); changeColors()">
+						About </a>
 				</div>
 				<div class="profile-nav-container">
-					<a href="#" id="posts" class="profile-nav-buttons"
+					<a href="#about-left-column" id="posts" class="profile-nav-buttons"
 						onclick="blueBottom2()"> Posts </a>
 				</div>
 				<div class="profile-nav-container">
-					<a href="#" id="friends" class="profile-nav-buttons"
+					<a href="#about-left-column" id="friends" class="profile-nav-buttons"
 						onclick="blueBottom3()"> Friends </a>
 				</div>
 				<div class="profile-nav-container">
-					<a href="#" id="photos" class="profile-nav-buttons"
+					<a href="#about-left-column" id="photos" class="profile-nav-buttons"
 						onclick="blueBottom4()"> Photos </a>
 				</div>
 			</div>
 		</div>
 		<div class="content-container">
 			<div class="about-container">
-				<div class="about-left-column">
+				<div class="about-left-column" id="about-left-column"
+					style="visibility: hidden">
 					<div class="left-columns-header">
 						<h3 style="color: #000000">
-							<b>About</b>
+							<b onclick="changeColors()">About</b>
 						</h3>
 					</div>
 					<div class="left-columns-buttons" href="#" id="overview"
 						onclick="changeColors()">
 						<p>Overview</p>
 					</div>
-					<div class="left-columns-buttons" href="#" id="work"
-						onclick="changeColors2()">
-						<p>Work and education</p>
-					</div>
 					<div class="left-columns-buttons" href="#" id="contact"
-						onclick="changeColors3()">
+						onclick="changeColors2()">
 						<p>Contact and basic info</p>
 					</div>
-					<div class="left-columns-buttons" href="#" id="details"
-						onclick="changeColors4()">
-						<p>Details about you</p>
+					<div class="left-columns-buttons" href="#" id="security"
+						onclick="changeColors3()">
+						<p>Security</p>
 					</div>
 				</div>
 				<div class="about-divider"></div>
+				<div class="info" id="overview1" style="visibility: hidden">
+					<div class="info-header">
+						<h4 style="color: #000000">Overview</h4>
+					</div>
+					<div class="contact-info-container">
+						<div class="contact-info">
+							<img alt="add cover picture" src="../images/account.png"
+								Style="height: 25px; width: 25px"> &nbsp;&nbsp;&nbsp;
+							<p style="color: #000000">Basil${requestScope.getFname }</p>
+						</div>
+						<div class="circleDiv-base2 circletype2" onclick="#">
+							<img alt="add cover picture" src="../images/pen.png"
+								Style="height: 20px; width: 20px">
+						</div>
+					</div>
+					<div class="info-tag">
+						<p>First name</p>
+					</div>
+					<div class="contact-info-container">
+						<div class="contact-info">
+							<img alt="add cover picture" src="../images/account.png"
+								Style="height: 25px; width: 25px"> &nbsp;&nbsp;&nbsp;
+							<p style="color: #000000">Omsha${requestScope.getLname }</p>
+						</div>
+						<div class="circleDiv-base2 circletype2" onclick="#">
+							<img alt="add cover picture" src="../images/pen.png"
+								Style="height: 20px; width: 20px">
+						</div>
+					</div>
+					<div class="info-tag">
+						<p>Last name</p>
+					</div>
+				</div>
+				<div class="info2" id="contact-and-basic-info"
+					style="visibility: hidden">
+					<div class="info-header">
+						<h4 style="color: #000000">Contact info</h4>
+					</div>
+					<div class="contact-info-container">
+						<div class="contact-info">
+							<img alt="add cover picture" src="../images/mail.png"
+								Style="height: 25px; width: 25px"> &nbsp;&nbsp;&nbsp;
+							<p style="color: #000000">basil.omsha@gmail.com${requestScope.getEmail }</p>
+						</div>
+						<div class="circleDiv-base2 circletype2" onclick="#">
+							<img alt="add cover picture" src="../images/pen.png"
+								Style="height: 20px; width: 20px">
+						</div>
+					</div>
+					<div class="info-tag">
+						<p>Email</p>
+					</div>
+					<div class="info-header">
+						<h4 style="color: #000000">Basic info</h4>
+					</div>
+					<div class="contact-info-container">
+						<div class="contact-info">
+							<img alt="add cover picture" src="../images/male.png"
+								Style="height: 25px; width: 25px"> &nbsp;&nbsp;&nbsp;
+							<p style="color: #000000">Male${requestScope.getGender }</p>
+						</div>
+						<div class="circleDiv-base2 circletype2" onclick="#">
+							<img alt="add cover picture" src="../images/pen.png"
+								Style="height: 20px; width: 20px">
+						</div>
+					</div>
+					<div class="info-tag">
+						<p>Gender</p>
+					</div>
+					<div class="contact-info-container">
+						<div class="contact-info">
+							<img alt="add cover picture" src="../images/cake.png"
+								Style="height: 25px; width: 25px"> &nbsp;&nbsp;&nbsp;
+							<p style="color: #000000">June${requestScope.getMonth }
+								18${requestScope.getDay }</p>
+						</div>
+						<div class="circleDiv-base2 circletype2" onclick="#">
+							<img alt="add cover picture" src="../images/pen.png"
+								Style="height: 20px; width: 20px">
+						</div>
+					</div>
+					<div class="info-tag">
+						<p>Birth date</p>
+					</div>
+					<div class="contact-info-container">
+						<div class="contact-info">
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<p style="color: #000000">1988${requestScope.getYear }</p>
+						</div>
+						<div class="circleDiv-base2 circletype2" onclick="#">
+							<img alt="add cover picture" src="../images/pen.png"
+								Style="height: 20px; width: 20px">
+						</div>
+					</div>
+					<div class="info-tag">
+						<p>Birth year</p>
+					</div>
+				</div>
+				<div class="info3" id="security1" style="visibility: hidden">
+					<div class="info-header">
+						<h4 style="color: #000000">Security</h4>
+					</div>
+					<div class="contact-info-container">
+						<div class="contact-info">
+							<img alt="add cover picture" src="../images/security.png"
+								Style="height: 25px; width: 25px"> &nbsp;&nbsp;&nbsp;
+							<p style="color: #000000">Password${requestScope.getPassword }</p>
+						</div>
+						<div class="circleDiv-base2 circletype2" onclick="#">
+							<img alt="add cover picture" src="../images/pen.png"
+								Style="height: 20px; width: 20px">
+						</div>
+					</div>
+					<div class="info-tag">
+						<p>Password</p>
+					</div>
+				</div>
 			</div>
 		</div>
-	</main>
+	</main id="end">
 	<script src="../js/scripts.js"></script>
 </body>
 </html>
