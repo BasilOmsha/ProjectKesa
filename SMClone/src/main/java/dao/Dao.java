@@ -1,22 +1,26 @@
 package dao;
 
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 
 import model.User;
+import security.SecurityUtils;
 import conn.Connections;
 
 public class Dao {
 	private static EntityManagerFactory emf;
-	
+
 	/**
-	 *Function to connect to database 
+	 * Function to connect to database
 	 */
 	private Connection conn;
 
@@ -24,7 +28,7 @@ public class Dao {
 	public Dao() {
 		try {
 			// get the connection to db form the Connections class
-			conn=Connections.getConnection();
+			conn = Connections.getConnection();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -67,20 +71,19 @@ public class Dao {
 	 */
 	public boolean checkemail(String email) {
 		boolean count = true;
-		String sql = "select email from user where email=?";
+		String sql = "SELECT email FROM user WHERE email=?";
 		try {
 			PreparedStatement stmt = conn.prepareStatement(sql);
 
 			stmt.setString(1, email);
 
-
 			ResultSet resultset = stmt.executeQuery();
-			
+
 			if (resultset.next()) {
 				// print for test purposes
-				System.out.println(""+email+" is already in use");
+				System.out.println("" + email + " is already in use");
 				return count;
-            }  
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

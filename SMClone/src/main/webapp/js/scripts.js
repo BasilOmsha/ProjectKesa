@@ -242,3 +242,24 @@ function changeColors3() {
 		s.add("left-columns-buttons");
 	}
 }
+
+/*Login ajax*/
+/*function login(form){
+	var user=new Object();
+	user.uname=form.uname.value;
+	user.paswd=form.paswd.value;
+	var jsonUser=JSON.stringify(user);
+	
+	var xmlhttp=new XMLHttpRequest();
+	xmlhttp.onreadystatechange = function() {
+	  if (this.readyState == 4 && this.status == 200) {
+		    document.getElementById("result").innerHTML = this.responseText;
+		  	//Empty form fields
+		    form.uname.value="";
+		    form.paswd.value="";
+	  }
+	};
+	xmlhttp.open("POST", "/login", true);
+	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xmlhttp.send(jsonUser);	
+}*/

@@ -27,7 +27,7 @@
 				<!-- <input class="form-check-input" type="checkbox"
 					id="flexSwitchCheckReverse"
 					onclick="darkMode()"> -->
-					<input class="form-check-input" type="checkbox"
+				<input class="form-check-input" type="checkbox"
 					id="flexSwitchCheckReverse"
 					onclick="window.location.href='./html/indexDarkMode.html'">
 				<label class="form-check-label" for="flexSwitchCheckReverse"><img
@@ -46,28 +46,29 @@
 			</div>
 			<!-- FORM -->
 			<div>
+				<p id='result'></p>
 				<div class="Login-container">
-					<form action="/login" method="post">
-						<label for="uname"></label> <input class="input-container"
-							type="text" placeholder="Enter Username" name="uname" required><br>
-						<label for="pswd"></label> <input class="input-container"
+					<form >
+						<label for="email"></label> <input class="input-container"
+							type="text" placeholder="Enter Email" name="email" required><br>
+						<label for="paswd"></label> <input class="input-container"
 							type="password" placeholder="Enter Password" name="paswd"
 							required><br>
-						<button class="login-button" type="submit">Log In</button>
+						<button class="login-button" onclick='login(this.form)'>Log
+							In</button>
 					</form>
-
 					<a class="form-forgot-password" href="#">Forgot password?</a>
 
 					<hr class="divider"></hr>
 
 
-					<a role="button" class="signup-button" href="../html/signupForm.html">Create
-						new account</a>
+					<a role="button" class="signup-button"
+						href="../html/signupForm.html">Create new account</a>
 
 				</div>
 				<p class="create-a-page-paragraph">
-					<a class="create-a-page" href="#"><b class="black">Create
-							a Page</b></a> for a celebrity, brand or business
+					<a class="create-a-page" href="#"><b class="black">Create a
+							Page</b></a> for a celebrity, brand or business
 				</p>
 			</div>
 		</div>

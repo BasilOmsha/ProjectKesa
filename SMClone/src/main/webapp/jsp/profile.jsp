@@ -12,7 +12,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Profile</title>
-<link rel="stylesheet" href="../css/profile.css" />
+<link rel="stylesheet" href="/css/profile.css" />
 <link rel="shortcut icon" href="../images/Logo2.png" />
 <link
 	href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
@@ -22,29 +22,29 @@
 	<header>
 		<div id="navbar">
 			<div class="logo-left-wrapper">
-				<img class="home-button" alt="home button" src="../images/Logo2.png"
-					Style="height: 35px; width: 35px"
-					onclick="window.location.href='../jsp/profile.jsp'">
+				<a href="#ty"> <img class="home-button" alt="home button"
+					src="../images/Logo2.png" Style="height: 35px; width: 35px"></a>
 			</div>
 			<div class="center-topnav">
 				<div class="wrap">
 					<div class="wrap2">
 						<img class="home-button" alt="home button"
 							src="../images/homeIcon.png" Style="height: 20px; width: 20px"
-							onclick="window.location.href='../jsp/profile.jsp'">
+							onclick="window.location.href='../jsp/profile.jsp#ty'">
 					</div>
 				</div>
 			</div>
 			<div class="logo-right-wrapper">
 				<img class="profile-button" alt="Profile button"
 					src="../images/account.png" Style="height: 35px; width: 35px"
-					onclick="window.location.href='../jsp/profile.jsp'">
+					onclick="window.location.href='../jsp/profile.jsp#ty'">
 			</div>
 		</div>
 	</header>
 	<main>
 		<div class="profile-upper-block">
 			<div class="cover-photo-block"></div>
+			<div class="filler" id="ty"></div>
 			<div class="cover-photo-block-bottom">
 				<div
 					class="main-profile-picture profile-button-main profile-button-main-pic"
@@ -66,8 +66,8 @@
 					Style="height: 20px; width: 20px">
 			</div>
 			<div class="username">
-				<h1>Basil ${requestScope.getFname }
-					Omsha${requestScope.getLname }</h1>
+				<h1>Basil ${sessionScope.readUsersInfo.getFname }
+					Omsha${sessionScope.readUsersInfo.getLname }</h1>
 			</div>
 			<div class="edit-profile" onclick="#">
 				<img alt="add cover picture" src="../images/pen.png"
@@ -80,20 +80,19 @@
 			<div class="profile-nav">
 				<div class="profile-nav-container">
 					<a href="#about-left-column" id="about" class="profile-nav-buttons"
-						onclick="blueBottom(); changeColors()">
-						About </a>
+						onclick="blueBottom(); changeColors()"> About </a>
 				</div>
 				<div class="profile-nav-container">
 					<a href="#about-left-column" id="posts" class="profile-nav-buttons"
 						onclick="blueBottom2()"> Posts </a>
 				</div>
 				<div class="profile-nav-container">
-					<a href="#about-left-column" id="friends" class="profile-nav-buttons"
-						onclick="blueBottom3()"> Friends </a>
+					<a href="#about-left-column" id="friends"
+						class="profile-nav-buttons" onclick="blueBottom3()"> Friends </a>
 				</div>
 				<div class="profile-nav-container">
-					<a href="#about-left-column" id="photos" class="profile-nav-buttons"
-						onclick="blueBottom4()"> Photos </a>
+					<a href="#about-left-column" id="photos"
+						class="profile-nav-buttons" onclick="blueBottom4()"> Photos </a>
 				</div>
 			</div>
 		</div>
@@ -126,7 +125,7 @@
 					</div>
 					<div class="contact-info-container">
 						<div class="contact-info">
-							<img alt="add cover picture" src="../images/account.png"
+							<img alt="add cover picture" src="../images/nameIcon.png"
 								Style="height: 25px; width: 25px"> &nbsp;&nbsp;&nbsp;
 							<p style="color: #000000">Basil${requestScope.getFname }</p>
 						</div>
@@ -140,7 +139,7 @@
 					</div>
 					<div class="contact-info-container">
 						<div class="contact-info">
-							<img alt="add cover picture" src="../images/account.png"
+							<img alt="add cover picture" src="../images/nameIcon.png"
 								Style="height: 25px; width: 25px"> &nbsp;&nbsp;&nbsp;
 							<p style="color: #000000">Omsha${requestScope.getLname }</p>
 						</div>

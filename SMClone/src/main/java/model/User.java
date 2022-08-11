@@ -83,6 +83,12 @@ public class User implements Serializable{
 		this.email = email;
 	}
 
+	public User(String email, String paswd) {
+		// TODO Auto-generated constructor stub
+		this.email = email;
+		this.paswd = paswd;
+	}
+
 	public int getUser_id() {
 		return user_id;
 	}

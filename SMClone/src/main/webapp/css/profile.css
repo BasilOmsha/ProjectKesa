@@ -143,6 +143,16 @@ body {
 	border-radius: 0px 0px 10px 10px;
 }
 
+.filler {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	width: 1090px;
+	height: 80px;
+	background: var(--lightgrey2);
+}
+
 .add-picture-button {
 	display: flex;
 	justify-content: center;
