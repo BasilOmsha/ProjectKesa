@@ -4,7 +4,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="model.User"%>
-
+<%
+//requires revalidation after logging out
+response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+response.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+response.setHeader("Expires", "0"); // Proxies
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,6 +23,9 @@
 	href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
 	rel="stylesheet" />
 </head>
+<%
+session.getAttribute("LoggedUser");
+%>
 <body onload="blueBottom(); changeColors()">
 	<header>
 		<div id="navbar">
@@ -31,13 +39,70 @@
 						<img class="home-button" alt="home button"
 							src="../images/homeIcon.png" Style="height: 20px; width: 20px"
 							onclick="window.location.href='../jsp/profile.jsp#ty'">
+						<%-- 						<%
+						if (session.getAttribute("LoggedUser") != null) {
+							String email = null;
+							String sessionID = null;
+							Cookie[] cookies = request.getCookies();
+							if (cookies != null) {
+								for (int i = 0; i < cookies.length; i++) {
+
+							if (cookies[i].getName().equals("LoggedUser"))
+								email = cookies[i].getValue();
+							if (cookies[i].getName().equals("JSESSIONID"))
+								sessionID = cookies[i].getValue();
+								}
+								out.println("Welcome, " + email);
+							} else {
+								sessionID = session.getId();
+							}
+						} else if (session.getAttribute("LoggedUser") == null) {
+							response.sendRedirect("/index.html");
+						}
+						%> --%>
 					</div>
 				</div>
 			</div>
 			<div class="logo-right-wrapper">
 				<img class="profile-button" alt="Profile button"
 					src="../images/account.png" Style="height: 35px; width: 35px"
-					onclick="window.location.href='../jsp/profile.jsp#ty'">
+					onclick="expandWindow()">
+			</div>
+			<div id="profile-info-text-positioning">
+				<div id="profile-info-container">
+					<div class="prof-container"
+						onclick="window.location.href='../jsp/profile.jsp#ty'">
+						<div
+							class="main-profile-picture1 profile-button-main1 
+							profile-button-main-pic1"
+							onclick="#">
+							<img alt="Profile picture" src="../images/avatar.png"
+								Style="height: 25px; width: 36px" onclick="#">
+						</div>
+						${sessionScope.readUsersInfo.fname }
+						${sessionScope.readUsersInfo.lname }
+					</div>
+					<div class="prof-nav-item" onclick="#'">
+						<div
+							class="main-profile-picture1 profile-button-main1 
+							profile-button-main-pic1"
+							onclick="#">
+							<img alt="Profile picture" src="../images/dark-mode-icon.png"
+								Style="height: 35px; width: 36px" onclick="#">
+						</div>
+						Dark Mode
+					</div>
+					<div class="prof-nav-item" onclick="window.location.href='/logout'">
+						<div
+							class="main-profile-picture1 profile-button-main1 
+							profile-button-main-pic1"
+							onclick="#">
+							<img alt="Profile picture" src="../images/logout.png"
+								Style="height: 35px; width: 36px" onclick="#">
+						</div>
+						Log out
+					</div>
+				</div>
 			</div>
 		</div>
 	</header>
@@ -66,8 +131,8 @@
 					Style="height: 20px; width: 20px">
 			</div>
 			<div class="username">
-				<h1>Basil ${sessionScope.readUsersInfo.getFname }
-					Omsha${sessionScope.readUsersInfo.getLname }</h1>
+				<h1>${sessionScope.readUsersInfo.fname }
+					${sessionScope.readUsersInfo.lname }</h1>
 			</div>
 			<div class="edit-profile" onclick="#">
 				<img alt="add cover picture" src="../images/pen.png"
@@ -76,6 +141,7 @@
 					&nbsp;<b>Edit profile</b>
 				</p>
 			</div>
+			<br>
 			<hr class="solid">
 			<div class="profile-nav">
 				<div class="profile-nav-container">
@@ -127,7 +193,7 @@
 						<div class="contact-info">
 							<img alt="add cover picture" src="../images/nameIcon.png"
 								Style="height: 25px; width: 25px"> &nbsp;&nbsp;&nbsp;
-							<p style="color: #000000">Basil${requestScope.getFname }</p>
+							<p style="color: #000000">${sessionScope.readUsersInfo.fname }</p>
 						</div>
 						<div class="circleDiv-base2 circletype2" onclick="#">
 							<img alt="add cover picture" src="../images/pen.png"
@@ -141,7 +207,7 @@
 						<div class="contact-info">
 							<img alt="add cover picture" src="../images/nameIcon.png"
 								Style="height: 25px; width: 25px"> &nbsp;&nbsp;&nbsp;
-							<p style="color: #000000">Omsha${requestScope.getLname }</p>
+							<p style="color: #000000">${sessionScope.readUsersInfo.lname }</p>
 						</div>
 						<div class="circleDiv-base2 circletype2" onclick="#">
 							<img alt="add cover picture" src="../images/pen.png"
@@ -161,7 +227,7 @@
 						<div class="contact-info">
 							<img alt="add cover picture" src="../images/mail.png"
 								Style="height: 25px; width: 25px"> &nbsp;&nbsp;&nbsp;
-							<p style="color: #000000">basil.omsha@gmail.com${requestScope.getEmail }</p>
+							<p style="color: #000000">${sessionScope.readUsersInfo.email }</p>
 						</div>
 						<div class="circleDiv-base2 circletype2" onclick="#">
 							<img alt="add cover picture" src="../images/pen.png"
@@ -178,7 +244,7 @@
 						<div class="contact-info">
 							<img alt="add cover picture" src="../images/male.png"
 								Style="height: 25px; width: 25px"> &nbsp;&nbsp;&nbsp;
-							<p style="color: #000000">Male${requestScope.getGender }</p>
+							<p style="color: #000000">${sessionScope.readUsersInfo.gender }</p>
 						</div>
 						<div class="circleDiv-base2 circletype2" onclick="#">
 							<img alt="add cover picture" src="../images/pen.png"
@@ -192,8 +258,8 @@
 						<div class="contact-info">
 							<img alt="add cover picture" src="../images/cake.png"
 								Style="height: 25px; width: 25px"> &nbsp;&nbsp;&nbsp;
-							<p style="color: #000000">June${requestScope.getMonth }
-								18${requestScope.getDay }</p>
+							<p style="color: #000000">${sessionScope.readUsersInfo.month }
+								${sessionScope.readUsersInfo.day }</p>
 						</div>
 						<div class="circleDiv-base2 circletype2" onclick="#">
 							<img alt="add cover picture" src="../images/pen.png"
@@ -206,7 +272,7 @@
 					<div class="contact-info-container">
 						<div class="contact-info">
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							<p style="color: #000000">1988${requestScope.getYear }</p>
+							<p style="color: #000000">${sessionScope.readUsersInfo.year }</p>
 						</div>
 						<div class="circleDiv-base2 circletype2" onclick="#">
 							<img alt="add cover picture" src="../images/pen.png"
