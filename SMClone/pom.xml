@@ -7,9 +7,9 @@
 
 	<version>0.1.0-SNAPSHOT</version>
 
-	<groupId>ElectionMachine</groupId>
+	<groupId>SMClone</groupId>
 
-	<artifactId>ElectionMachine</artifactId>
+	<artifactId>SMClone</artifactId>
 
 	<properties>
 

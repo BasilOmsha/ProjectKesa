@@ -46,16 +46,17 @@
 			</div>
 			<!-- FORM -->
 			<div>
-				<p id='result'></p>
 				<div class="Login-container">
-					<form >
+					<!-- <form id="login-form"> -->
+					<form action="./login" method="post">
 						<label for="email"></label> <input class="input-container"
 							type="text" placeholder="Enter Email" name="email" required><br>
 						<label for="paswd"></label> <input class="input-container"
 							type="password" placeholder="Enter Password" name="paswd"
 							required><br>
-						<button class="login-button" onclick='login(this.form)'>Log
-							In</button>
+						<button class="login-button" type="submit">Log In</button>
+						<!-- <input class="login-button" type="button" value="Log in"
+							onclick="loginAjax(this.form);"> -->
 					</form>
 					<a class="form-forgot-password" href="#">Forgot password?</a>
 
@@ -71,6 +72,7 @@
 							Page</b></a> for a celebrity, brand or business
 				</p>
 			</div>
+			<p id='result'></p>
 		</div>
 	</main>
 	<svg style="background-color: #ffffff;" width="100%" height="70"

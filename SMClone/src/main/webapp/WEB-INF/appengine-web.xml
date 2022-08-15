@@ -10,7 +10,7 @@
 	<system-properties>
 		<property name="java.util.logging.config.file"
 			value="WEB-INF/logging.properties" />
-		<property name="drivername" value="com.mysql.jdbc.Driver" />
+		<property name="drivername" value="com.mysql.cj.jdbc.Driver" />
 		<property name="localusername" value="basel" />
 		<property name="localpassword" value="whatsup" />
 		<property name="databasename" value="smclone" />

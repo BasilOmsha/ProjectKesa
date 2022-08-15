@@ -243,23 +243,58 @@ function changeColors3() {
 	}
 }
 
+//shows an info when user clicks on profile button on top- 
+//right of the navbar in profile page
+function expandWindow() {
+	var x = document.getElementById("profile-info-container");
+	if (x.style.display === "none") {
+		x.style.display = "block";
+	} else {
+		x.style.display = "none";
+	}
+}
+//When user clicks somewhere else info box disapears
+document.addEventListener('mouseup', function(e) {
+	var container = document.getElementById('profile-info-container');
+	if (!container.contains(e.target)) {
+		container.style.display = 'none';
+	}
+});
+
 /*Login ajax*/
-/*function login(form){
-	var user=new Object();
-	user.uname=form.uname.value;
-	user.paswd=form.paswd.value;
-	var jsonUser=JSON.stringify(user);
-	
-	var xmlhttp=new XMLHttpRequest();
+/*function loginAjax(form) {
+	var user = new Object();
+	user.email = form.email.value;
+	user.paswd = form.paswd.value;
+	var jsonUser = JSON.stringify(user);
+	console.log(user.email);
+	console.log(user.paswd);
+	console.log(jsonUser);
+	var xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange = function() {
-	  if (this.readyState == 4 && this.status == 200) {
-		    document.getElementById("result").innerHTML = this.responseText;
-		  	//Empty form fields
-		    form.uname.value="";
-		    form.paswd.value="";
-	  }
+		if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("result").innerHTML = this.responseText;
+			//Empty form fields
+			form.email.value = "";
+			form.paswd.value = "";
+		}
 	};
-	xmlhttp.open("POST", "/login", true);
+	xmlhttp.open("POST","./login" ,true);
 	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xmlhttp.send(jsonUser);	
+	xmlhttp.send(jsonUser);
+}*/
+
+/*function loginAjax(form) {
+	var user = new Object();
+	user.email = form.email.value;
+	user.paswd = form.paswd.value;
+	var jsonUser = JSON.stringify(user).serializeArray();
+
+	 $.ajax({type: "POST",
+	url:"./login",
+	data:jsonUser,
+	success:function(result){
+	alert("Success");
+	}
+  });
 }*/

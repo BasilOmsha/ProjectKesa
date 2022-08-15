@@ -90,7 +90,7 @@ public class User implements Serializable{
 	}
 
 	public int getUser_id() {
-		return user_id;
+		return this.user_id;
 	}
 
 	public void setUser_id(int user_id) {
@@ -98,7 +98,7 @@ public class User implements Serializable{
 	}
 
 	public String getFname() {
-		return fname;
+		return this.fname;
 	}
 
 	public void setFname(String fname) {
@@ -106,7 +106,7 @@ public class User implements Serializable{
 	}
 
 	public String getLname() {
-		return lname;
+		return this.lname;
 	}
 
 	public void setLname(String lname) {
@@ -114,7 +114,7 @@ public class User implements Serializable{
 	}
 
 	public String getEmail() {
-		return email;
+		return this.email;
 	}
 
 	public void setEmail(String email) {
@@ -122,7 +122,7 @@ public class User implements Serializable{
 	}
 
 	public String getPaswd() {
-		return paswd;
+		return this.paswd;
 	}
 
 	public void setPaswd(String paswd) {
@@ -130,7 +130,7 @@ public class User implements Serializable{
 	}
 
 	public String getSalt() {
-		return salt;
+		return this.salt;
 	}
 
 	public void setSalt(String salt) {
@@ -138,7 +138,7 @@ public class User implements Serializable{
 	}
 
 	public String getMonth() {
-		return month;
+		return this.month;
 	}
 
 	public void setMonth(String month) {
@@ -146,7 +146,7 @@ public class User implements Serializable{
 	}
 
 	public String getDay() {
-		return day;
+		return this.day;
 	}
 
 	public void setDay(String day) {
@@ -154,7 +154,7 @@ public class User implements Serializable{
 	}
 
 	public String getYear() {
-		return year;
+		return this.year;
 	}
 
 	public void setYear(String year) {
@@ -162,7 +162,7 @@ public class User implements Serializable{
 	}
 
 	public String getGender() {
-		return gender;
+		return this.gender;
 	}
 
 	public void setGender(String gender) {
@@ -170,7 +170,7 @@ public class User implements Serializable{
 	}
 
 	public String getPronoun() {
-		return pronoun;
+		return this.pronoun;
 	}
 
 	public void setPronoun(String pronoun) {
@@ -178,18 +178,18 @@ public class User implements Serializable{
 	}
 
 	public String getGenOpt() {
-		return genOpt;
+		return this.genOpt;
 	}
 
 	public void setGenOpt(String genOpt) {
 		this.genOpt = genOpt;
 	}
 
-	@Override
-	public String toString() {
-		return "A New User Has Been Added:" + "\n" + "user_id=" + user_id + "\n" + "fname=" + fname + "\n" + "lname=" + lname + "\n" + "email=" + email + "\n" + "paswd="
-				+ paswd + "\n" + "salt=" + salt + "\n" + "month=" + month + "\n" + "day=" + day + "\n" + "year=" + year + "\n" + "gender="
-				+ gender + "\n" + "pronoun=" + pronoun + "\n" + "genOpt=" + genOpt;
-	}
+//	@Override
+//	public String toString() {
+//		return "A New User Has Been Added:" + "\n" + "user_id=" + user_id + "\n" + "fname=" + fname + "\n" + "lname=" + lname + "\n" + "email=" + email + "\n" + "paswd="
+//				+ paswd + "\n" + "salt=" + salt + "\n" + "month=" + month + "\n" + "day=" + day + "\n" + "year=" + year + "\n" + "gender="
+//				+ gender + "\n" + "pronoun=" + pronoun + "\n" + "genOpt=" + genOpt;
+//	}
 
 }
