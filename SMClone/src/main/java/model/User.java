@@ -9,28 +9,28 @@ import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 
 @Entity
-@NamedQuery(name="User.findAll", query="SELECT u FROM User u")
-public class User implements Serializable{
+@NamedQuery(name = "User.findAll", query = "SELECT u FROM User u")
+public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int user_id;
-	
+
 	private String fname;
 
 	private String lname;
-	
+
 	private String email;
 
 	private String paswd;
 
 	private String salt;
-	
+
 	private String month;
-	
+
 	private String day;
-	
+
 	private String year;
 
 	private String gender;
@@ -38,7 +38,7 @@ public class User implements Serializable{
 	private String pronoun;
 
 	private String genOpt;
-	
+
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -64,7 +64,7 @@ public class User implements Serializable{
 	public User(String fname, String lname, String email, String hashpw, String salt, String month, String day,
 			String year, String gender, String pronoun, String genOpt) {
 		// TODO Auto-generated constructor stub
-		
+
 		this.fname = fname;
 		this.lname = lname;
 		this.email = email;
@@ -87,6 +87,12 @@ public class User implements Serializable{
 		// TODO Auto-generated constructor stub
 		this.email = email;
 		this.paswd = paswd;
+	}
+
+	public User(int user_id, String fname) {
+		// TODO Auto-generated constructor stub
+		this.user_id = user_id;
+		this.fname = fname;
 	}
 
 	public int getUser_id() {

@@ -30,9 +30,11 @@ public class Logout extends HttpServlet {
     	//invalidate the session if exists
     	HttpSession session = request.getSession(false);
     	System.out.println("User="+session.getAttribute("LoggedUser"));
+    	System.out.println("User="+session.getAttribute("LoggedUser1"));
     	if(session != null){
     		session.invalidate();
     	}
+    	
     	//no encoding because we have invalidated the session
     	response.sendRedirect("./index.html");
     }

@@ -47,7 +47,7 @@ public class UserClientDrk extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		PrintWriter out = response.getWriter();
+
 		String uri = "http://localhost:8080/rest/services/createUser";
 
 		try {

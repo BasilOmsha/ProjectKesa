@@ -243,7 +243,8 @@ function changeColors3() {
 	}
 }
 
-//shows an info when user clicks on profile button on top- 
+//shows user name and logout and drk modebuttons 
+//when user clicks on profile button on top- 
 //right of the navbar in profile page
 function expandWindow() {
 	var x = document.getElementById("profile-info-container");
@@ -261,8 +262,51 @@ document.addEventListener('mouseup', function(e) {
 	}
 });
 
+//Prompts user toupload cover pic
+function expandWindow2() {
+	var x = document.getElementById("cover-photo-upload");
+	if (x.style.display === "none") {
+		x.style.display = "block";
+	} else {
+		x.style.display = "none";
+	}
+}
+//When user clicks somewhere else info box disapears
+document.addEventListener('mouseup', function(e) {
+	var container = document.getElementById('cover-photo-upload');
+	if (!container.contains(e.target)) {
+		container.style.display = 'none';
+	}
+});
+
+//Prompts user to update fname
+function editName() {
+	var x = document.getElementById("edit-fname");
+	if (x.style.display === "none") {
+		x.style.display = "block";
+	} else {
+		x.style.display = "none";
+	}
+}
+
+//When user clicks somewhere else info box disapears
+document.addEventListener('mouseup', function(e) {
+	var container = document.getElementById("edit-fname");
+	if (!container.contains(e.target)) {
+		container.style.display = 'none';
+	}
+});
+
+function expandEditFname() {
+	document.getElementById("edit-fname-expanded").style.visibility = "visible";
+	document.getElementById("edit-fname-expanded").style.display = "block";
+	const list = document.getElementById("edit-fname").classList;
+	list.add("editFname-expanded");
+	list.remove("edit-fname");
+}
+
 /*Login ajax*/
-/*function loginAjax(form) {
+function loginAjax(form) {
 	var user = new Object();
 	user.email = form.email.value;
 	user.paswd = form.paswd.value;
@@ -279,10 +323,49 @@ document.addEventListener('mouseup', function(e) {
 			form.paswd.value = "";
 		}
 	};
-	xmlhttp.open("POST","./login" ,true);
-	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xmlhttp.open("POST", "./rest/services/login", true);
+	xmlhttp.setRequestHeader("Content-type", "application/json");
 	xmlhttp.send(jsonUser);
-}*/
+}
+
+function AutoRefresh(t) {
+	setTimeout("location.reload(true);", t);
+}
+
+input.addEventListener("keypress", function(event) {
+	if (event.key === "Enter") {
+		event.preventDefault();
+		document.getElementById("myBtn").click();
+	}
+});
+
+function editEmail() {
+	var x = document.getElementById("edit-email1");
+	if (x.style.display === "none") {
+		x.style.display = "block";
+	} else {
+		x.style.display = "none";
+	}
+}
+
+//When user clicks somewhere else info box disapears
+function mouseUp() {
+	document.addEventListener('mouseup', function(e) {
+		var container = document.getElementById("edit-email1");
+		if (!container.contains(e.target)) {
+			container.style.display = 'none';
+		}
+	});
+}
+
+
+function expandEditEmail() {
+	document.getElementById("edit-email-expanded").style.visibility = "visible";
+	document.getElementById("edit-email-expanded").style.display = "block";
+	const list = document.getElementById("edit-email1").classList;
+	list.add("editEmail-expanded");
+	list.remove("edit-email1");
+}
 
 /*function loginAjax(form) {
 	var user = new Object();
@@ -298,3 +381,125 @@ document.addEventListener('mouseup', function(e) {
 	}
   });
 }*/
+
+function editBasic() {
+	var x = document.getElementById("edit-basic");
+	if (x.style.display === "none") {
+		x.style.display = "block";
+	} else {
+		x.style.display = "none";
+	}
+}
+
+//When user clicks somewhere else info box disapears
+function mouseUp2() {
+	document.addEventListener('mouseup', function(e) {
+		var container2 = document.getElementById("edit-basic");
+		if (!container2.contains(e.target)) {
+			container2.style.display = 'none';
+		}
+	});
+}
+
+function expandEditBasic() {
+	document.getElementById("edit-basic-expanded").style.visibility = "visible";
+	document.getElementById("edit-basic-expanded").style.display = "block";
+	const list = document.getElementById("edit-basic").classList;
+	list.add("editBasic-expanded");
+	const list1 = document.getElementById("basic-info-form").classList;
+	list1.add("basic-info-form");
+}
+
+//this expands the form when user selects "custom gender"
+function expand2() {
+	if (document.getElementById("other").checked) {
+		document.getElementById("toExpand").style.visibility = "visible";
+		document.getElementById("toExpand").style.display = "block";
+		const list = document.getElementById("basic-info-form").classList;
+		list.add("basic-info-form-expanded");
+		list.remove("basic-info-form")
+
+	}
+	else if (document.getElementById("female").checked) {
+		document.getElementById("toExpand").style.visibility = "hidden";
+		document.getElementById("toExpand").style.display = "none";
+		const list = document.getElementById("basic-info-form").classList;
+		list.remove("basic-info-form-expanded");
+		list.add("basic-info-form");
+	}
+	else if (document.getElementById("male").checked) {
+		document.getElementById("toExpand").style.visibility = "hidden";
+		document.getElementById("toExpand").style.display = "none";
+		const list = document.getElementById("basic-info-form").classList;
+		list.remove("basic-info-form-expanded");
+		list.add("basic-info-form");
+	}
+	else
+		return;
+}
+
+function editBirthday() {
+	var x = document.getElementById("edit-Birthday");
+	if (x.style.display === "none") {
+		x.style.display = "block";
+	} else {
+		x.style.display = "none";
+	}
+}
+
+//When user clicks somewhere else info box disapears
+function mouseUp4() {
+	document.addEventListener('mouseup', function(e) {
+		var container = document.getElementById("edit-Birthday");
+		if (!container.contains(e.target)) {
+			container.style.display = 'none';
+		}
+	});
+}
+
+function expandEditBirthday() {
+	document.getElementById("edit-Birthday-expanded").style.visibility = "visible";
+	document.getElementById("edit-Birthday-expanded").style.display = "block";
+	const list = document.getElementById("edit-Birthday").classList;
+	list.add("editBirthdayExpanded");
+	list.remove("edit-email1");
+}
+
+function editPaswd() {
+	var x = document.getElementById("edit-paswd");
+	if (x.style.display === "none") {
+		x.style.display = "block";
+	} else {
+		x.style.display = "none";
+	}
+}
+
+//When user clicks somewhere else info box disapears
+function mouseUp5() {
+	document.addEventListener('mouseup', function(e) {
+		var container = document.getElementById("edit-paswd");
+		if (!container.contains(e.target)) {
+			container.style.display = 'none';
+		}
+	});
+}
+
+
+function expandEditPaswd() {
+	document.getElementById("edit-paswd-expanded").style.visibility = "visible";
+	document.getElementById("edit-paswd-expanded").style.display = "block";
+	const list = document.getElementById("edit-paswd").classList;
+	list.add("editEmail-expanded");
+	list.remove("edit-paswd");
+}
+
+function AutoRefresh(t) {
+	setTimeout("location.reload(true);", t);
+}
+
+input.addEventListener("keypress", function(event) {
+	if (event.key === "Enter") {
+		event.preventDefault();
+		document.getElementById("myBtn").click();
+	}
+});

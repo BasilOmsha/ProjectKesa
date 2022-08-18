@@ -17,22 +17,27 @@
 
 <!-- <link rel="icon" type="img/svg" href="./images/favicon.svg"> -->
 <!--Link to local css files.-->
-<link rel="stylesheet" type="text/css" href="../css/index-darkmode.css">
+<link rel="stylesheet" type="text/css" href="../css/index-style.css">
 <link rel="shortcut icon" href="../images/Logo2.png" />
 </head>
 <body>
 	<header>
 		<nav class="navbar navbar-expand-lg bg-light">
-			<div class="form-check form-switch">
-				<input class="form-check-input" type="checkbox" role="switch"
-					id="flexSwitchCheckChecked"
-					onclick="window.location.href='../index.html'" checked> <label
-					class="form-check-label" for="flexSwitchCheckChecked"><img
-					alt="Light Mode" src="../images/goldenCrescent.png"></label>
+			<div class="form-check form-switch form-check-reverse">
+				<!-- <input class="form-check-input" type="checkbox"
+					id="flexSwitchCheckReverse"
+					onclick="darkMode()"> -->
+				<input class="form-check-input" type="checkbox"
+					id="flexSwitchCheckReverse"
+					onclick="window.location.href='../html/indexDarkMode.html'">
+				<label class="form-check-label" for="flexSwitchCheckReverse"><img
+					alt="Light Mode" src="../images/goldenSun.png"></label>
 			</div>
+			<!-- 			<div class="hidden-message">I am shown when someone hovers over the div above.</div> -->
 		</nav>
 	</header>
 	<main>
+
 		<div class="container">
 			<!-- TITLE -->
 			<div class="title-container">
@@ -42,9 +47,9 @@
 			</div>
 			<!-- FORM -->
 			<div>
-				<div class="alert success">
-					<span class="closebtn">&times;</span> <strong>Signup
-						completed!</strong> You may use your email and password to login
+				<div class="alert1 success1">
+					<span class="closebtn">&times;</span> <strong>Wrong email or password!</strong> 
+					Check your login information and try agian
 				</div>
 				<div class="Login-container">
 					<form action="../login" method="post">
@@ -62,24 +67,23 @@
 
 
 					<a role="button" class="signup-button"
-						href="../html/signupFormDrk.html">Create new account</a>
+						href="../html/signupForm.html">Create new account</a>
 
 				</div>
 				<p class="create-a-page-paragraph">
-					<a class="create-a-page" href="#" style="color: #8f13fe"><b>Create
-							a Page</b></a> for a celebrity, brand or business
+					<a class="create-a-page" href="#"><b class="black">Create a
+							Page</b></a> for a celebrity, brand or business
 				</p>
 			</div>
-			<!-- <a href="" onClick="document.getElementById('forma').style.display = 'block'">Click Me</a> -->
 		</div>
 	</main>
-	<svg style="background-color: #2f303a;" width="100%" height="70"
+	<svg style="background-color: #ffffff;" width="100%" height="70"
 		viewbox="0 0 100 100" preserveAspectRatio="none">
   	<path id="wavepath" d="M0,0  L100,0C70,180 39,20 0,100z"
-			fill="#171e24"></svg>
+			fill="#f0f2f5"></svg>
 	<footer class="py-3 my-4">
 		<ul class="nav justify-content-center pb-3 mb-3">
-			<li class="nav-item"><a href="indexDarkMode.html"
+			<li class="nav-item"><a href="index.html"
 				class="nav-link px-2 text-muted">Home</a></li>
 			<li class="nav-item"><a
 				href="https://github.com/BasilOmsha/ProjectKesa" target="_blank"
