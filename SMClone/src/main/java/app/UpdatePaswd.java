@@ -61,7 +61,7 @@ public class UpdatePaswd extends HttpServlet {
 				}
 
 			} else if (!SecurityUtils.isPasswordOk(hashpw, password, salt)) {
-				String encodedURL = response.encodeRedirectURL("./userInfo");
+				String encodedURL = response.encodeRedirectURL("./userInfo2");
 				System.out.println("Final Test 6 passed wrong paswd!!");
 				try {
 					response.sendRedirect(encodedURL);
