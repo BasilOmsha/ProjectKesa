@@ -553,3 +553,22 @@ file.addEventListener('change', function() {
 		reader.readAsDataURL(pickedFile);
 	}
 });*/
+
+function editAll() {
+	var x = document.getElementById("edit-all");
+	if (x.style.display === "none") {
+		x.style.display = "block";
+	} else {
+		x.style.display = "none";
+	}
+}
+
+//When user clicks somewhere else info box disapears
+function mouseUp7() {
+	document.addEventListener('mouseup', function(e) {
+		var container = document.getElementById("edit-all");
+		if (!container.contains(e.target)) {
+			container.style.display = 'none';
+		}
+	});
+}

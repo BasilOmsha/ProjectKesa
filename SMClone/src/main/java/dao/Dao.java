@@ -541,6 +541,94 @@ public class Dao {
 		}
 	}
 
+	public static void updateall(MultivaluedMap<String, String> mvm, HttpServletRequest request,
+			HttpServletResponse response) {
+		// TODO Auto-generated method stub
+		EntityManager em = getEntityManager();
+
+		int user_id = Integer.parseInt(mvm.getFirst("user_id"));
+		String fname = mvm.getFirst("fname");
+		String lname = mvm.getFirst("lname");
+		String email = mvm.getFirst("email");
+		String month = mvm.getFirst("month");
+		String day = mvm.getFirst("day");
+		String year = mvm.getFirst("year");
+		String gender = mvm.getFirst("gender");
+		String pronoun = mvm.getFirst("pronoun");
+		String genOpt = mvm.getFirst("genOpt");
+
+		try {
+
+			System.out.println(user_id + " " + fname + " " + lname + " " + email + " " + month + " " + day + " " + year
+					+ " " + gender + " " + pronoun + " " + genOpt);
+
+			em.getTransaction().begin();
+			Query q = em.createQuery("update User u set u.fname = :fname, u.lname=:lname, u.email = :email, "
+					+ "u.month = :month, u.day = :day, u.year = :year,"
+					+ " u.gender = :gender, u.pronoun = :pronoun, u.genOpt = :genOpt" + " where u.user_id = :user_id");
+			q.setParameter("user_id", user_id);
+			q.setParameter("fname", fname);
+			q.setParameter("lname", lname);
+			q.setParameter("email", email);
+			q.setParameter("month", month);
+			q.setParameter("day", day);
+			q.setParameter("year", year);
+			q.setParameter("gender", gender);
+			q.setParameter("pronoun", pronoun);
+			q.setParameter("genOpt", genOpt)
+			.executeUpdate();
+			em.getTransaction().commit();
+			em.close();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		Dao dao = new Dao();
+
+		try {
+			// refreshing
+			System.out.println("Test 2 passed");
+			System.out.println("Test 3 passed");
+			String data = email;
+			if (!data.equals(null)) {
+				HttpSession session = request.getSession();
+				User user = dao.readUserInfo(data);
+				dao.close();
+				System.out.println("Test 4 passed");
+				session.setAttribute("LoggedUser", user);
+				System.out.println("Session: " + request.getSession(false));
+				session.setMaxInactiveInterval(30 * 60);
+				System.out.println("Test 5 passed");
+				Cookie cookie = new Cookie("LoggedUser", data);
+				cookie.setMaxAge(30 * 60);
+				response.addCookie(cookie);
+				String encodedURL = response.encodeRedirectURL("/userInfo?email=" + data);
+				System.out.println("Final Test 6 passed");
+				try {
+					response.sendRedirect(encodedURL);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			} else {
+				dao.close();
+				RequestDispatcher rd = request.getRequestDispatcher("./index.html");
+				try {
+					rd.include(request, response);
+				} catch (ServletException | IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+	// not used
 	public static Response uploadFile(InputStream fileInputStream, FormDataContentDisposition fileMetaData,
 			ServletContext sc) {
 		// TODO Auto-generated method stub

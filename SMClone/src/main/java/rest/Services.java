@@ -73,7 +73,16 @@ public class Services {
 			@Context HttpServletResponse response) {
 		Dao.deleteAccount(mvm, request, response);
 	}
-
+	
+	@POST
+	@Path("/updateall")
+	@Consumes("application/x-www-form-urlencoded")
+	public void updateall(MultivaluedMap<String, String> mvm, @Context HttpServletRequest request,
+			@Context HttpServletResponse response) {
+		Dao.updateall(mvm, request, response);
+	}
+	
+	//Not used yet
 	@POST
 	@Path("/fileupload")
 	@Consumes({ MediaType.MULTIPART_FORM_DATA })
