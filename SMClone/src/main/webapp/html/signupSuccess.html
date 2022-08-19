@@ -14,12 +14,10 @@
 	rel="stylesheet"
 	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 	crossorigin="anonymous">
-<link rel="stylesheet"
-	href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
 <!-- <link rel="icon" type="img/svg" href="./images/favicon.svg"> -->
 <!--Link to local css files.-->
-<link rel="stylesheet" type="text/css" href="./css/index-style.css">
+<link rel="stylesheet" type="text/css" href="../css/index-style.css">
 <link rel="shortcut icon" href="../images/Logo2.png" />
 </head>
 <body>
@@ -31,14 +29,15 @@
 					onclick="darkMode()"> -->
 				<input class="form-check-input" type="checkbox"
 					id="flexSwitchCheckReverse"
-					onclick="window.location.href='./html/indexDarkMode.html'">
+					onclick="window.location.href='../html/indexDarkMode.html'">
 				<label class="form-check-label" for="flexSwitchCheckReverse"><img
-					alt="Light Mode" src="./images/goldenSun.png"></label>
+					alt="Light Mode" src="../images/goldenSun.png"></label>
 			</div>
 			<!-- 			<div class="hidden-message">I am shown when someone hovers over the div above.</div> -->
 		</nav>
 	</header>
 	<main>
+
 		<div class="container">
 			<!-- TITLE -->
 			<div class="title-container">
@@ -48,19 +47,20 @@
 			</div>
 			<!-- FORM -->
 			<div>
+				<div class="alert success">
+					<span class="closebtn">&times;</span> <strong>Signup
+						completed!</strong> You may use your email and password to login
+				</div>
 				<div class="Login-container">
-					<!-- <form id="login-form"> -->
-					<form action="./login" method="post">
+					<form action="../login" method="post">
 						<label for="email"></label> <input class="input-container"
 							type="text" placeholder="Enter Email" name="email" required><br>
-						<label for="paswd"></label> <input class="input-container"
-							type="password" placeholder="Enter Password"
-							autocomplete="current-password" id="paswd" name="paswd"
-							required>
+						<label for="pswd"></label> <input class="input-container"
+							type="password" placeholder="Enter Password" name="paswd"
+							required><br>
 						<button class="login-button" type="submit">Log In</button>
-						<!-- <input class="login-button" type="button" value="Log in"
-							onclick="loginAjax(this.form);"> -->
 					</form>
+
 					<a class="form-forgot-password" href="#">Forgot password?</a>
 
 					<hr class="divider"></hr>
@@ -75,7 +75,6 @@
 							Page</b></a> for a celebrity, brand or business
 				</p>
 			</div>
-			<p id='result'></p>
 		</div>
 	</main>
 	<svg style="background-color: #ffffff;" width="100%" height="70"
@@ -93,6 +92,6 @@
 		<p class="text-center text-muted">&copy; 2022 Basil Omsha,
 			#projekctKesa</p>
 	</footer>
-	<script src="./js/scripts.js"></script>
+	<script src="../js/scripts.js"></script>
 </body>
 </html>
