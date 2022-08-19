@@ -63,7 +63,7 @@ session.getAttribute("LoggedUser1");
 								sessionID = session.getId();
 							}
 						} else if (session.getAttribute("LoggedUser1") == null) {
-							response.sendRedirect("/index.html");
+							response.sendRedirect("./index.html");
 						}
 						%>
 					</div>
@@ -113,19 +113,18 @@ session.getAttribute("LoggedUser1");
 		</div>
 	</header>
 	<main>
-
 		<div class="update-pswd-container">
-			<div class="edit-paswd-item">
+			<div class="edit-paswd-item" style="margin-top: 13px">
 				<img alt="Profile picture" src="../images/update.png"
-					Style="height: 50px; width: 53px; padding-right: 5px" onclick="#">
+					Style="height: 50px; width: 53px; padding-right: 5px">
 				<h2>Update Your Password</h2>
 			</div>
 			<form
 				style="display: flex; justify-content: center; flex-direction: column; align-items: center;"
 				action='./rest/services/updatingPassword' method='post'>
-				<h4 Style="color: black; padding-bottom: 15px;">Enter a new
+				<h4 >Enter a new
 					password!</h4>
-
+				<p>You will be logged out!</p>
 				<input type="number" name="user_id"
 					value="${sessionScope.readUsersInfo.user_id }"
 					class="input-first_name" id="all1" hidden /> <input type="text"
@@ -135,30 +134,46 @@ session.getAttribute("LoggedUser1");
 					type="password" name="paswd" placeholder="New password"
 					class="input-first_name" id="all1" required /><br>
 				<button id="myBtn" class="update-button2" type="submit"
-					onclick="JavaScript:AutoRefresh(1000); ">Update</button>
+					onclick="JavaScript:AutoRefresh(1000);">Update</button>
 			</form>
 
 		</div>
 
-		<div class="update-pswd-container">
-			<div class="edit-paswd-item" style="background: red;">
+		<div class="update-pswd-container" onclick="mouseUp6()">
+			<div class="edit-paswd-item" style="background: red; margin-top: 3px">
 				<img alt="Profile picture" src="../images/delete.png"
-					Style="height: 50px; width: 53px; padding-right: 5px" onclick="#">
+					Style="height: 50px; width: 53px; padding-right: 5px">
 				<h2>Delete Your Account</h2>
 			</div>
 			<form
-				style="display: flex; justify-content: center; flex-direction: column; align-items: center;"
-				action='./rest/services/deleteAccount' method='post'>
+				style="display: flex; justify-content: center; flex-direction: column; align-items: center;">
 				<h4>To delete your account</h4>
 				<h4>press the button below.</h4>
-				<h4 Style="margin-bottom: 3px">Action cannot be undone!</h4>
+				<h4>Action cannot be undone!</h4>
 				<input type="number" name="user_id"
 					value="${sessionScope.readUsersInfo.user_id }"
 					class="input-first_name" id="all1" hidden /><br>
-				<button id="myBtn" class="update-button3" type="submit"
-					onclick="JavaScript:AutoRefresh(1000); ">Delete</button>
+				<button id="myBtn" class="update-button3" type="button"
+					onclick="deleteWindow()">Delete</button>
 			</form>
-
+		</div>
+		<div id="delete-account-positioning">
+			<div class="delete-account" id="delete-account">
+				<div class="delete-account-item">
+					<form
+						style="display: flex; justify-content: center; flex-direction: column; align-items: center;"
+						action='./rest/services/deleteAccount' method='post'>
+						<h4>Once you confirm deletion</h4>
+						<h4>your account will be removed permanently</h4>
+						<h4>and you will be returned to the login page.</h4>
+						<input type="number" name="user_id"
+							value="${sessionScope.readUsersInfo.user_id }"
+							class="input-first_name" id="all1" hidden /><br>
+						<button id="myBtn" class="update-button4" type="submit"
+							onclick="JavaScript:AutoRefresh(1000);">Confirm</button>
+					</form>
+				</div>
+			</div>
 		</div>
 	</main>
 	<script src="../js/scripts.js"></script>

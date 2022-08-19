@@ -477,7 +477,7 @@ public class Dao {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		Cookie[] cookies = request.getCookies();
 		if (cookies != null) {
 			for (Cookie cookie : cookies) {
@@ -496,6 +496,40 @@ public class Dao {
 			session.invalidate();
 		}
 
+	}
+
+	public static void deleteAccount(MultivaluedMap<String, String> mvm, HttpServletRequest request,
+			HttpServletResponse response) {
+		// TODO Auto-generated method stub
+
+		int user_id = Integer.parseInt(mvm.getFirst("user_id"));
+
+		EntityManager em = emf.createEntityManager();
+
+		em.getTransaction().begin();
+		User u = em.find(User.class, user_id);
+		if (u != null) {
+			em.remove(u);// The actual deletion line
+		}
+		em.getTransaction().commit();
+
+		Cookie[] cookies = request.getCookies();
+		if (cookies != null) {
+			for (Cookie cookie : cookies) {
+				if (cookie.getName().equals("JSESSIONID")) {
+					System.out.println("JSESSIONID=" + cookie.getValue());
+				}
+				cookie.setMaxAge(0);
+				response.addCookie(cookie);
+			}
+		}
+		// invalidate the session if exists
+		HttpSession session = request.getSession(false);
+		System.out.println("User=" + session.getAttribute("LoggedUser"));
+		System.out.println("User=" + session.getAttribute("LoggedUser1"));
+		if (session != null) {
+			session.invalidate();
+		}
 	}
 
 }

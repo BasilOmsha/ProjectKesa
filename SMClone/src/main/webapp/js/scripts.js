@@ -497,9 +497,36 @@ function AutoRefresh(t) {
 	setTimeout("location.reload(true);", t);
 }
 
+function PswUpdateAlert() {
+	alert("Your password has been updated successfully!");
+}
+
+function deletionAlert() {
+	alert("Your account has been deleted successfully!");
+}
+
 input.addEventListener("keypress", function(event) {
 	if (event.key === "Enter") {
 		event.preventDefault();
 		document.getElementById("myBtn").click();
 	}
 });
+
+function deleteWindow() {
+	var x = document.getElementById("delete-account");
+	if (x.style.display === "none") {
+		x.style.display = "block";
+	} else {
+		x.style.display = "none";
+	}
+}
+
+//When user clicks somewhere else info box disapears
+function mouseUp6() {
+	document.addEventListener('mouseup', function(e) {
+		var container = document.getElementById("delete-account");
+		if (!container.contains(e.target)) {
+			container.style.display = 'none';
+		}
+	});
+}

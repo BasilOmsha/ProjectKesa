@@ -334,3 +334,17 @@ img {
 .alert1.success1 {
 	background-color: red;
 }
+
+.alert2 {
+  padding: 20px;
+  background-color: var(--alert);
+  color: var(--bodyBackground);
+  opacity: 1;
+  transition: opacity 0.6s;
+  margin-bottom: 15px;
+  width: 396px;
+}
+
+.alert1.success2 {
+	background-color: green;
+}

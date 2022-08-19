@@ -63,4 +63,12 @@ public class Services {
 			@Context HttpServletResponse response) {
 		Dao.updatingPassword(mvm, request, response);
 	}
+	
+	@POST
+	@Path("/deleteAccount")
+	@Consumes("application/x-www-form-urlencoded")
+	public void deleteAccount(MultivaluedMap<String, String> mvm, @Context HttpServletRequest request,
+			@Context HttpServletResponse response) {
+		Dao.deleteAccount(mvm, request, response);
+	}
 }
