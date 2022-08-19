@@ -16,7 +16,8 @@ response.setHeader("Expires", "0"); // Proxies
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Profile</title>
+<title>${sessionScope.readUsersInfo.fname }
+	${sessionScope.readUsersInfo.lname } | ChatNook</title>
 <link rel="stylesheet" href="/css/profile.css" />
 <link rel="shortcut icon" href="../images/Logo2.png" />
 <link
@@ -131,10 +132,15 @@ session.getAttribute("LoggedUser");
 								Style="height: 35px; width: 36px" onclick="#"> Select
 							Photo
 						</div> -->
-						<div class="uplaod-photo-item " onclick="window.location.href='#'">
+						<div class="uplaod-photo-item2 ">
 							<img alt="Profile picture" src="../images/upload.png"
 								Style="height: 20px; width: 23px; padding-right: 5px"
-								onclick="#"><b>Upload Photo</b>
+								onclick="#">
+								<form action="./rest/services/fileupload" method="post"
+								enctype="multipart/form-data" >
+								<input type="file" id="file" name="file" accept=".png" />	
+								<input type="submit" id="uploadBtn" value="Upload Photo" />	
+							</form>
 						</div>
 					</div>
 				</div>

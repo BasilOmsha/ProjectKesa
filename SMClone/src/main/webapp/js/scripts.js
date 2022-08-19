@@ -530,3 +530,26 @@ function mouseUp6() {
 		}
 	});
 }
+
+/*//Upload
+const imgDiv = document.querySelector('.cover-photo-block');
+const img = document.querySelector('#photo');
+const file = document.querySelector('#file');
+const uploadBtn = document.querySelector('#uploadBtn');
+
+imgDiv.addEventListener('mouseenter', function() {
+	uploadBtn.style.display = "block";
+});
+imgDiv.addEventListener('mouseleave', function() {
+	uploadBtn.style.display = "none";
+});
+file.addEventListener('change', function() {
+	const pickedFile = this.files[0];
+	if (pickedFile) {
+		const reader = new FileReader();
+		reader.addEventListener('load', function() {
+			img.setAttribute('src', reader.result);
+		});
+		reader.readAsDataURL(pickedFile);
+	}
+});*/
