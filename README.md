@@ -9,3 +9,5 @@ In the future Logged-in users will have a possibility to upload their profile im
 This project is being built with java using RESTful Web Services and servlets. Most of the forms  will use post-type requests to send data.
 
 The interface is built using HTML, CSS, JS and JSP.
+
+P.S. In order for this project to work on your local machine, it is required to create a database with one table matching the model class. 
