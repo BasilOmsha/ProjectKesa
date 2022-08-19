@@ -1420,3 +1420,36 @@ select {
 .closebtn:hover {
   color: black;
 }
+
+
+#file {
+	display:none;
+}
+
+.uplaod-photo-item2 {
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	width: 100%;
+	height: 40px;
+	padding: 2px;
+	font-size: 15px;
+	margin-top: -7px;
+	font-size: 13px;
+}
+
+.uplaod-photo-item2:hover {
+	cursor: pointer;
+	background: #f2f2f2;
+	border-radius: 10px;
+}
+
+#uploadBtn {
+	font-size: 15px;
+	border: none;
+	background: none;
+}
+
+#uploadBtn:hover{
+	cursor: pointer;
+}
