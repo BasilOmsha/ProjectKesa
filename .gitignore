@@ -24,3 +24,5 @@ hs_err_pid*
 
 persistence.xml
 appengine-web.xml
+
+.metadata
